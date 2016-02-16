@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Arqueiro" Database="">
+  <Project Name="Arqueiro" Path="Arqueiro/Arqueiro.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="Arqueiro" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="Arqueiro" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
