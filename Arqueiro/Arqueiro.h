@@ -1,6 +1,7 @@
 #ifndef ARQUEIRO_H
 #define ARQUEIRO_H
 #include <string>
+#include "Data.h" //incluindo a classe Data
 
 using std::string;
 

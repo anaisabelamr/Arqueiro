@@ -94,5 +94,7 @@
     <File Name="../arqueiro.cpp"/>
     <File Name="../Arqueiro.h"/>
     <File Name="../main.cpp"/>
+    <File Name="../Data.h"/>
+    <File Name="../Data.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
