@@ -9,9 +9,9 @@ public:
     ~Data();
     
 private:
-    int dia; // 1-31 dependendo do mês
-    int mes; // 1-12 Janeiro-Dezembro
-    int ano; //Qualquer ano
+    const int dia; // 1-31 dependendo do mês
+    const int mes; // 1-12 Janeiro-Dezembro
+    const int ano; //Qualquer ano
     
     //Função para checar se o dia esta correto
     int checarDia(int) const;

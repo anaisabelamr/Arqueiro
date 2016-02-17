@@ -5,26 +5,30 @@
 
 using std::string;
 
-class arqueiro{
-	public:
-        int atacar(int opcao);
-		int ataqueSimples();
-		int rajadaDeFlechas();
-		int chuvaDeFlechas();
-		bool defesa();
-			
-	private:
-		int hp;
-		int sp;
-		int flechas;
-		int arco;
-		int adaga;
-		int destreza;
-        int dano;
-		string nome();
+class arqueiro
+{
+public:
 
-        
-		
-		
+// Nomes dos arqueiros: Clint Barton, Oliver Queen e Katniss Everdeen xD
+
+    arqueiro(string,int,int);
+    void setNome(string nome);
+    string getNome();
+    arqueiro();
+    ~arqueiro();
+    static int atacar(int opcao);
+    int ataqueSimples();
+    int rajadaDeFlechas();
+    int chuvaDeFlechas();
+    bool defesa(bool sucesso);
+    int furtividade();
+			
+private:
+	int hp;
+	int sp;
+	int flechas;
+	int arco;
+	int destreza;
+    int dano;
 };
 #endif // ARQUEIRO_H
