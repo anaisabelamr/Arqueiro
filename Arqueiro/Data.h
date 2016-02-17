@@ -1,20 +1,27 @@
 #ifndef DATA_H
 #define DATA_H
+#include <iostream>
+
+using namespace std;
+using std::cout;
+using std::cin;
 
 class Data
 {
 public:
-    Data(int = 1, int = 1, int= 1900);
-    void print() const;
+    Data(int = 15, int = 10, int= 1415);
+    void imprimirData() const;
     ~Data();
     
 private:
-    const int dia; // 1-31 dependendo do mês
-    const int mes; // 1-12 Janeiro-Dezembro
-    const int ano; //Qualquer ano
+    int dia; // 1-31 dependendo do mês
+    int mes; // 1-12 Janeiro-Dezembro
+    int ano; //Qualquer ano
     
     //Função para checar se o dia esta correto
     int checarDia(int) const;
+    int checarMes(int) const;
+    int imprimirData(int,int,int) const;
 
 }; // fim da classe Data
 

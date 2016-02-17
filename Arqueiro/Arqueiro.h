@@ -3,24 +3,22 @@
 #include <string>
 #include "Data.h" //incluindo a classe Data
 
+using namespace std;
 using std::string;
 
 class arqueiro
 {
 public:
-
-// Nomes dos arqueiros: Clint Barton, Oliver Queen e Katniss Everdeen xD
-
-    arqueiro(string,int,int);
-    void setNome(string nome);
+    arqueiro(const string &);
+    void setNome(const string &);
     string getNome();
     arqueiro();
     ~arqueiro();
-    static int atacar(int opcao);
+    static int atacar();
     int ataqueSimples();
     int rajadaDeFlechas();
     int chuvaDeFlechas();
-    bool defesa(bool sucesso);
+    bool defesa(bool);
     int furtividade();
 			
 private:
@@ -30,5 +28,6 @@ private:
 	int arco;
 	int destreza;
     int dano;
+    string nome;
 };
 #endif // ARQUEIRO_H
