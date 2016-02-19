@@ -9,15 +9,18 @@ using std::string;
 class arqueiro
 {
 public:
-    arqueiro(const string &);
-    void setNome(const string &);
-    string getNome();
     arqueiro();
+    arqueiro(int hp, int sp, const string nome);
     ~arqueiro();
-    static int atacar();
-    int ataqueSimples();
-    int rajadaDeFlechas();
-    int chuvaDeFlechas();
+    void setNome(const string);
+    string getNome();
+    void setHp();
+    int getHp();
+    int setSp();
+    int getSp();
+    int menuAtaque();
+    int ataqueSimples(int flechas);
+    int rajadaDeFlechas(int sp,int flechas);
     bool defesa(bool);
     int furtividade();
 			
@@ -25,9 +28,6 @@ private:
 	int hp;
 	int sp;
 	int flechas;
-	int arco;
-	int destreza;
-    int dano;
     string nome;
 };
 #endif // ARQUEIRO_H

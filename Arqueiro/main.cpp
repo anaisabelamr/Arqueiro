@@ -3,9 +3,9 @@
 #include "Arqueiro.h"
 #include "Data.h"
 
-const static int hpMax = 100;
-const static int spMax = 80;
-const static int destreza = 50;
+const static int hpMax = 50;
+const static int spMax = 20;
+const static int flechasMax = 20;
 
 using namespace std;
 using std::cout;
@@ -14,21 +14,12 @@ using std::cin;
 
 int main()
 {
-    cout >> "Batalha de Azincourt";
-    Data data (25,10,1415);
-    data.imprimirData();
+arqueiro a;
     
-    arqueiro arqueiro1 ("Clint Barton");
-    arqueiro arqueiro2 ("Oliver Queen");
-    arqueiro arqueiro3 ("Katniss Everdeen");
+a.setNome("Oliver Queen");
     
-    
-    
-    if ((hp == 0) || (sp == 0))
-    {
-        arqueiro::furtividade();
-    
-    };
+cout << "Nome do Arqueiro: " << a.getNome() "\n" << endl;
+cout << "HP: " << hpMax << "\nSP: " << spMax << "\n\n";
 
     
     

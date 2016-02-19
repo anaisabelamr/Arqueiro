@@ -6,96 +6,41 @@
 
 
 using std::cout;
-using std::cout;
+using std::cin;
 
 arqueiro::arqueiro()
 {
-    this->nome = "desconhecido";
+    this->nome = "";
+    hp = 0;
+    sp = 0;
 }
-
-arqueiro::arqueiro(const string &nome)
+arqueiro::arqueiro(int hp, int sp, const string nome)
 {
-    setNome(nome);
-}
-
-void arqueiro::setNome(const string &nome)
+    this->hp = hp;
+    this->sp = sp;
+    this->nome = nome;
+}    
+void arqueiro::setNome(string nome)
 {
     this->nome = nome;
 }
-
 string arqueiro::getNome()
 {
-    return this->nome;
+    return nome;
 }
-
-arqueiro::atacar()
+void arqueiro::setHp(int hp)
 {
-    int opcao;
-    cout << "Digite o numero correspondente ao ataque desejado:\n1-Ataque Simples\n2-Rajada de Flechas\n3-Chuva de Flechas";
-    cin >> opcao;
-    switch(opcao)
-    {
-      case 1:
-        ataqueSimples();
-        break;
-      case 2:    
-        rajadaDeFlechas();
-        break;
-      case 3:
-        chuvaDeFlechas();
-        break;
-      default:
-        cout << "Esta nao e uma opcao valida. Tente novamente.";
-        break;
-    }
+    this->hp = hpMax;
 }
-
-arqueiro::ataqueSimples()
+int arqueiro::getHp()
 {
-	flechas-=1; // A cada ataque simples, será usada uma flecha.
-	dano = destreza*3; // O dano do ataque 
+    return hp;
 }
-				
-arqueiro::rajadaDeFlechas()
+void arqueiro::setSp(int sp)
 {
-	flechas-=3; // A cada rajada, serão usadas 3 flechas.
-	dano=destreza*4;
-	sp-=3;				
+    this->sp = spMax;
 }
-
-arqueiro::chuvaDeFlechas()
+void arqueiro::getSp()
 {
-	flechas-=5; // a cada chuva, serão usadas 5 flechas.
-	dano=destreza*5;
-	sp-=4;				
+    return sp;
 }
-	
-arqueiro::defesa(bool sucesso)
-{
-	if(sucesso == true)
-        {
-        sp+=5; //Ganha 5 de SP a cada defesa realizada com sucesso
-        } 
-    else
-        {
-        hp-=0.05*hp; //Perde 5% do HP a cada defesa não realizada
-        }
-}
-        
-arqueiro::furtividade()
-{
-    do
-    {
-       cout <<"MODO FURTIVO\nDados do arqueiro\nHP:\nSP:";
-       hp+=25;
-       sp+=20;
-       sleep(3);
-    }
-    while ((hp < hpMax) && (sp < spMax));
-            
-    if ((hp == hpMax) && (sp == spMax)
-        {
-        cout << "FIM DO MODO FURTIVO";
-        }
-}
-                
