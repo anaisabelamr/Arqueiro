@@ -8,9 +8,6 @@ using std::cin;
 Data::Data(int dia, int mes, int ano)
 {
     this-> dia=checarDia(dia);
-    this-> mes=checarMes(mes);
-    
-    
 }    // 25 de outubro de 1415
     
 int Data::checarDia(int dia) const
@@ -24,22 +21,15 @@ int Data::checarDia(int dia) const
         dia == 29 && // testa se o dia é 29
         (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)))
             return dia;
-    cout <<"Dia inválido.\n";
+//    cout <<"Dia inválido.\n";
     
     return 1;
 }    
 
-int Data::checarMes(int mes) const
+int Data::dataBatalha()
 {
-    static const int mesesPorAno[13]={0,1,2,3,4,5,6,7,8,9,10,11,12};
-    
-    if (mes>0 && mes <= mesesPorAno[mes])
-        return mes;
-}
-
-void imprimirData(int dia, int mes, int ano)
-{
-    cout << "DATA: (DD/MM/AAAA): " << dia << "/" << mes << "/" << ano <<"\n";
+	cout << "\nBatalha de Azincourt";
+	cout << "\nDATA: 25/10/1415";
 }
 
 Data::~Data()

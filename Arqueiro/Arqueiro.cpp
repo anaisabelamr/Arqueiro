@@ -7,6 +7,7 @@
 using std::cout;
 using std::cin;
 
+
 Arqueiro::Arqueiro()
 {
     this->nome = "";
@@ -57,11 +58,11 @@ int Arqueiro::getFlechas()
 {
 	return flechas;
 }
-int Arqueiro::atirar(int flechas)
+void Arqueiro::atirar(int flechas)
 {
 	int opcao;
 	Arqueiro::flechas -= 1;
-	Arqueiro::sp -=4;
+	Arqueiro::sp -=2;
 	cout << "Flechas: " << Arqueiro::flechas;
 	cout << "\nSP: " << Arqueiro::sp;
 	cout << "\nAtirar novamente? [1-Sim]  ";
@@ -69,6 +70,7 @@ int Arqueiro::atirar(int flechas)
 	if (opcao == 1)
 	{
 		atirar(1);
+		
 	}
 	else
 	{
@@ -79,27 +81,33 @@ int Arqueiro::atirar(int flechas)
 		furtividade();
 	}
 }
-int furtividade()
+void Arqueiro::furtividade()
 {
-    do
-    {
-		cout <<"MODO FURTIVO\nDados do arqueiro\nHP: " << Arqueiro::hp "\nSP:" << Arqueiro::sp;
+	
+		cout <<"\n\nMODO FURTIVO\nDados do arqueiro";
+		cout << "\nHP: " << Arqueiro::hp;
+		cout << "\nSP " << Arqueiro::sp;
 		Arqueiro::hp+=10;
 		Arqueiro::sp+=4;
-		sleep(3);
-		int opcao2;
-		cout << "\nAtacar novamente? [1-Sim]";
-		cin >> opcao2;
-		if (opcao2 == 1)
+		//sleep(3);
+		while ((Arqueiro::sp <= Arqueiro::spMax) && (Arqueiro::hp <= Arqueiro::hpMax))
 		{
-			a.atirar(1);
-		}
-		else
-		{
-			cout << "Tente novamente.";
-		}
-	   
-		}
-		while ((Arqueiro::hp < Arqueiro::hpMax) && (Arqueiro::sp < Arqueiro::spMax));
+			furtividade();
+		};
+
+}
+bool Arqueiro::defesa(bool bemSucedida)
+{
+	if (bemSucedida == false)
+	{
+		Arqueiro::hp -=0.2*Arqueiro::hp;
+		cout << "\n\nDefesa mal sucedida\nHP: " << Arqueiro::hp;
+		return false;
+	}
+	else
+	{
+		cout << "\n\nDefesa bem sucedida.\n\n";
+		return true;
+	}
 }
 

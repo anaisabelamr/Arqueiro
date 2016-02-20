@@ -20,15 +20,19 @@ public:
     int getSp();
 	void setFlechas(int );
 	int getFlechas();
-    int atirar(int );
+    void atirar(int );
     bool defesa(bool);
-    int furtividade();
+    void furtividade();
 	int hp;
 	int sp;
+	const static double hpMax = 50.0;
+	const static int spMax = 20;
 			
 private:
 
 	int flechas;
     string nome;
+	bool bemSucedida;
+	const static int flechasMax = 20;
 };
 #endif // ARQUEIRO_H

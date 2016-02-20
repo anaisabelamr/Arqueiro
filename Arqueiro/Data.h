@@ -12,6 +12,7 @@ public:
     Data(int = 15, int = 10, int= 1415);
     void imprimirData() const;
     ~Data();
+	int dataBatalha();
     
 private:
     int dia; // 1-31 dependendo do mês
@@ -20,8 +21,8 @@ private:
     
     //Função para checar se o dia esta correto
     int checarDia(int) const;
-    int checarMes(int) const;
-    int imprimirData(int,int,int) const;
+
+
 
 }; // fim da classe Data
 

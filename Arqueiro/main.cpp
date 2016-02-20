@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-const static int hpMax = 50;
+const static double hpMax = 50.0;
 const static int spMax = 20;
 const static int flechasMax = 20;
 
@@ -14,32 +14,40 @@ using namespace std;
 int main()
 {
     Arqueiro a;
+	Data d;
         
-    a.setNome("Oliver Queen");
+    a.setNome("Oliver Queen\n");
+	
 	a.setHp(hpMax);
 	a.setSp(spMax);
 	a.setFlechas(flechasMax);
         
     cout << "Nome do Arqueiro: " << a.getNome() << endl;
-    cout << "HP: " << a.getHp() << "\nSP: " << a.getSp() << "\nTotal de Flechas: "<< a.getFlechas() ;"\n\n";
+	d.dataBatalha();
+    cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp() << "\nTotal de Flechas: "<< a.getFlechas() ;
 	
 	int opcao;
 	
-	cout << "Deseja atirar? [1-Sim]  ";
+	cout << "\n\nDeseja atirar? [1-Sim]  ";
 	cin >> opcao;
 	if (opcao == 1)
 	{
 		a.atirar(1);
+
+		
 	}
 	else
 	{
 		cin;
 	}
-	
-	if ((a.sp == 0) || (a.hp == 0))
+
+		a.defesa(false);
+
+	do 
 	{
 		a.furtividade();
 	}
+	while ((a.sp <= spMax) || (a.hp <= hpMax));
     
 	return 0;
 }
