@@ -6,21 +6,21 @@
 using namespace std;
 using std::string;
 
-class arqueiro
+class Arqueiro
 {
 public:
-    arqueiro();
-    arqueiro(int hp, int sp, const string nome);
-    ~arqueiro();
+    Arqueiro();
+    Arqueiro(int hp, int sp, const string nome);
+    ~Arqueiro();
     void setNome(const string);
     string getNome();
-    void setHp();
+    void setHp(int );
     int getHp();
-    int setSp();
+    void setSp(int );
     int getSp();
-    int menuAtaque();
-    int ataqueSimples(int flechas);
-    int rajadaDeFlechas(int sp,int flechas);
+	void setFlechas(int );
+	int getFlechas();
+    int atirar(int );
     bool defesa(bool);
     int furtividade();
 			
