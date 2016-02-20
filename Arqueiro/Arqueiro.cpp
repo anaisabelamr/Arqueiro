@@ -1,6 +1,8 @@
 #include "Arqueiro.h"
 #include <string>
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 
 using std::cout;
 using std::cin;
@@ -55,19 +57,49 @@ int Arqueiro::getFlechas()
 {
 	return flechas;
 }
-int Arqueiro::atirar(int )
+int Arqueiro::atirar(int flechas)
 {
 	int opcao;
 	Arqueiro::flechas -= 1;
-	cout << "Atirar novamente? [1-Sim]  ";
+	Arqueiro::sp -=4;
+	cout << "Flechas: " << Arqueiro::flechas;
+	cout << "\nSP: " << Arqueiro::sp;
+	cout << "\nAtirar novamente? [1-Sim]  ";
 	cin >> opcao;
 	if (opcao == 1)
 	{
-		atirar();
+		atirar(1);
 	}
 	else
 	{
-		system("PAUSE");
+		cin;
 	}
+	if ((Arqueiro::sp == 0) || (Arqueiro::hp == 0))
+	{
+		furtividade();
+	}
+}
+int furtividade()
+{
+    do
+    {
+		cout <<"MODO FURTIVO\nDados do arqueiro\nHP: " << Arqueiro::hp "\nSP:" << Arqueiro::sp;
+		Arqueiro::hp+=10;
+		Arqueiro::sp+=4;
+		sleep(3);
+		int opcao2;
+		cout << "\nAtacar novamente? [1-Sim]";
+		cin >> opcao2;
+		if (opcao2 == 1)
+		{
+			a.atirar(1);
+		}
+		else
+		{
+			cout << "Tente novamente.";
+		}
+	   
+		}
+		while ((Arqueiro::hp < Arqueiro::hpMax) && (Arqueiro::sp < Arqueiro::spMax));
 }
 

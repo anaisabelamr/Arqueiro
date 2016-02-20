@@ -23,10 +23,11 @@ public:
     int atirar(int );
     bool defesa(bool);
     int furtividade();
-			
-private:
 	int hp;
 	int sp;
+			
+private:
+
 	int flechas;
     string nome;
 };

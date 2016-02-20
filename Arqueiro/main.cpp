@@ -2,11 +2,12 @@
 #include <string.h>
 #include "Arqueiro.h"
 #include "Data.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 const static int hpMax = 50;
 const static int spMax = 20;
 const static int flechasMax = 20;
-
 
 using namespace std;
 
@@ -28,13 +29,17 @@ int main()
 	cin >> opcao;
 	if (opcao == 1)
 	{
-		Arqueiro::atirar(int );
+		a.atirar(1);
 	}
 	else
 	{
-		system("PAUSE");
+		cin;
 	}
-
+	
+	if ((a.sp == 0) || (a.hp == 0))
+	{
+		a.furtividade();
+	}
     
 	return 0;
 }
