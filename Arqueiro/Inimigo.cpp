@@ -36,3 +36,8 @@ int Inimigo::getHp()
     return hp;
 }
 
+void Inimigo::diminuirHp()
+{
+    hp = 0.2 * hp;
+}
+

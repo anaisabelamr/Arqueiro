@@ -38,9 +38,7 @@ int main()
 	cin >> opcao;
 	if (opcao == 1)
 	{
-		a.atirar(1);
-
-		
+		a.atirar(1, i);
 	}
 	else
 	{
@@ -53,7 +51,7 @@ int main()
 	{
 		a.furtividade();
 	}
-	while ((a.sp <= spMax) || (a.hp <= hpMax));
+	while ((a.getSp() <= spMax) || (a.getHp() <= hpMax));
 	
 	a.defesa(true);
     

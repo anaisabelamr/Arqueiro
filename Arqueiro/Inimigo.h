@@ -16,13 +16,10 @@ public:
     string getNome();
     void setHp(int );
     int getHp();
-	const static double hpMax = 50.0;
-	int hp;
-	
+    void diminuirHp();
 private:
 	string nome;
-
-
+    int hp;
 };
 
 #endif // INIMIGO_H

@@ -2,6 +2,7 @@
 #define ARQUEIRO_H
 #include <string>
 #include "Data.h" //incluindo a classe Data
+#include "Inimigo.h"
 
 using namespace std;
 using std::string;
@@ -20,19 +21,17 @@ public:
     int getSp();
 	void setFlechas(int );
 	int getFlechas();
-    void atirar(int );
+    void atirar(int , Inimigo &);
     bool defesa(bool);
     void furtividade();
-	int hp;
-	int sp;
-	const static double hpMax = 50.0;
-	const static int spMax = 20;
-			
 private:
-
 	int flechas;
-    string nome;
+	string nome;
 	bool bemSucedida;
 	const static int flechasMax = 20;
+	const static int spMax = 20;
+	const static double hpMax = 50;
+	int hp;
+	int sp;
 };
 #endif // ARQUEIRO_H
