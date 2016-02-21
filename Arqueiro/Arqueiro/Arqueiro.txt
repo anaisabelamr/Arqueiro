@@ -1,1 +1,1 @@
-./Debug/Arqueiro_arqueiro.cpp.o ./Debug/Arqueiro_main.cpp.o ./Debug/Arqueiro_Data.cpp.o   
+./Debug/Arqueiro_arqueiro.cpp.o ./Debug/Arqueiro_main.cpp.o ./Debug/Arqueiro_Data.cpp.o ./Debug/Arqueiro_Inimigo.cpp.o   

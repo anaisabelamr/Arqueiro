@@ -62,7 +62,7 @@ AS       := C:/TDM-GCC-64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files (x86)\CodeLite
-Objects0=$(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_Data.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix) 
 
 
 
@@ -116,6 +116,14 @@ $(IntermediateDirectory)/Arqueiro_Data.cpp$(DependSuffix): ../Data.cpp
 
 $(IntermediateDirectory)/Arqueiro_Data.cpp$(PreprocessSuffix): ../Data.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_Data.cpp$(PreprocessSuffix) "../Data.cpp"
+
+$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix): ../Inimigo.cpp $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/git/Arqueiro/Arqueiro/Arqueiro/Inimigo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(DependSuffix): ../Inimigo.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(DependSuffix) -MM "../Inimigo.cpp"
+
+$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(PreprocessSuffix): ../Inimigo.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(PreprocessSuffix) "../Inimigo.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

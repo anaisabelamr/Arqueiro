@@ -1,4 +1,7 @@
-Debug/Arqueiro_main.cpp.o: ../main.cpp ../Arqueiro.h ../Data.h
+Debug/Arqueiro_main.cpp.o: ../main.cpp ../Inimigo.h ../Arqueiro.h \
+ ../Data.h
+
+../Inimigo.h:
 
 ../Arqueiro.h:
 

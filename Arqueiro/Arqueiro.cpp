@@ -1,4 +1,5 @@
 #include "Arqueiro.h"
+#include "Inimigo.h"
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -63,19 +64,20 @@ void Arqueiro::atirar(int flechas)
 	int opcao;
 	Arqueiro::flechas -= 1;
 	Arqueiro::sp -=2;
-	cout << "Flechas: " << Arqueiro::flechas;
+	Inimigo::hp -= 0.2*Inimigo::hp;
+	
+	cout << "\nFlechas: " << Arqueiro::flechas;
 	cout << "\nSP: " << Arqueiro::sp;
-	cout << "\nAtirar novamente? [1-Sim]  ";
+	
+	cout << "\n\nHP do inimigo: " << Inimigo::hp;
+	
+	cout << "\n\nAtirar novamente? [1-Sim]  ";
 	cin >> opcao;
 	if (opcao == 1)
 	{
 		atirar(1);
-		
 	}
-	else
-	{
-		cin;
-	}
+
 	if ((Arqueiro::sp == 0) || (Arqueiro::hp == 0))
 	{
 		furtividade();

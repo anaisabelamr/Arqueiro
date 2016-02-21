@@ -96,6 +96,8 @@
     <File Name="../main.cpp"/>
     <File Name="../Data.h"/>
     <File Name="../Data.cpp"/>
+    <File Name="../Inimigo.h"/>
+    <File Name="../Inimigo.cpp"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
