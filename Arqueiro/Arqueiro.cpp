@@ -13,6 +13,7 @@ Arqueiro::Arqueiro()
     this->nome = "";
     hp = 0;
     sp = 0;
+    novasFlechas = 0;
 }
 Arqueiro::Arqueiro(int hp, int sp, const string nome)
 {
@@ -110,5 +111,30 @@ bool Arqueiro::defesa(bool bemSucedida)
 		cout << "\n\nDefesa bem sucedida.\n\n";
 		return true;
 	}
+}
+void adicionarFlechas(const int &novasFlechas)
+{
+    if (flechas != 0)
+    {
+        int * aux = new int[flechasMax];
+        
+        for (int i = 0; i < flechasMax; i++)
+            aux[i] = flechas[i];
+            
+        delete [] flechas;
+            
+        flechas = new int [ ++flechasMax ] ;
+            
+        for (int i = 0; i < flechasMax-1; i++)
+                flechas[i] = aux [i];
+    
+        flechas[flechasMax-1] = novasFlechas;
+        delete [] aux;
+    }
+    else
+    {
+        flechas = new int [ ++flechasMax];
+        flechas[0] = flechasNovas;
+    }
 }
 

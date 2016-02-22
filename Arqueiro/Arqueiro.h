@@ -24,10 +24,12 @@ public:
     void atirar(int , Inimigo &);
     bool defesa(bool);
     void furtividade();
+    void adicionarFlechas(const int &);
 private:
 	int flechas;
 	string nome;
 	bool bemSucedida;
+    int *novasFlechas;
 	const static int flechasMax = 20;
 	const static int spMax = 20;
 	const static double hpMax = 50;

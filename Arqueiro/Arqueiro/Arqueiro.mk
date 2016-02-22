@@ -5,18 +5,18 @@
 ## Debug
 ProjectName            :=Arqueiro
 ConfigurationName      :=Debug
-WorkspacePath          := "C:\git\Arqueiro\Arqueiro\Arqueiro"
-ProjectPath            := "C:\git\Arqueiro\Arqueiro\Arqueiro\Arqueiro"
+WorkspacePath          := "C:\Users\FACOMP\git\Arqueiro\Arqueiro"
+ProjectPath            := "C:\Users\FACOMP\git\Arqueiro\Arqueiro\Arqueiro"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=ANA ISABELA
-Date                   :=21/02/2016
-CodeLitePath           :="C:\Program Files (x86)\CodeLite"
-LinkerName             :=C:/TDM-GCC-64/bin/g++.exe
-SharedObjectLinkerName :=C:/TDM-GCC-64/bin/g++.exe -shared -fPIC
+User                   :=FACOMP
+Date                   :=22/02/2016
+CodeLitePath           :="C:\Program Files\CodeLite"
+LinkerName             :=C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe
+SharedObjectLinkerName :=C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
@@ -36,7 +36,7 @@ ObjectsFileList        :="Arqueiro.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
-RcCompilerName         :=C:/TDM-GCC-64/bin/windres.exe
+RcCompilerName         :=windres
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -49,19 +49,19 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := C:/TDM-GCC-64/bin/ar.exe rcu
-CXX      := C:/TDM-GCC-64/bin/g++.exe
-CC       := C:/TDM-GCC-64/bin/gcc.exe
+AR       := C:/cygwin64/bin/x86_64-pc-cygwin-ar.exe rcu
+CXX      := C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe
+CC       := C:/cygwin64/bin/x86_64-pc-cygwin-gcc.exe
 CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := C:/TDM-GCC-64/bin/as.exe
+AS       := C:/cygwin64/bin/x86_64-pc-cygwin-as.exe
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files (x86)\CodeLite
+CodeLiteDir:=C:\Program Files\CodeLite
 Objects0=$(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix) 
 
 
@@ -94,36 +94,36 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(ObjectSuffix): ../arqueiro.cpp $(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/git/Arqueiro/Arqueiro/Arqueiro/arqueiro.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/FACOMP/git/Arqueiro/Arqueiro/arqueiro.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(DependSuffix): ../arqueiro.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(DependSuffix) -MM "../arqueiro.cpp"
 
 $(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(PreprocessSuffix): ../arqueiro.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(PreprocessSuffix) "../arqueiro.cpp"
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_arqueiro.cpp$(PreprocessSuffix) "../arqueiro.cpp"
 
 $(IntermediateDirectory)/Arqueiro_main.cpp$(ObjectSuffix): ../main.cpp $(IntermediateDirectory)/Arqueiro_main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/git/Arqueiro/Arqueiro/Arqueiro/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/FACOMP/git/Arqueiro/Arqueiro/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Arqueiro_main.cpp$(DependSuffix): ../main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Arqueiro_main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Arqueiro_main.cpp$(DependSuffix) -MM "../main.cpp"
 
 $(IntermediateDirectory)/Arqueiro_main.cpp$(PreprocessSuffix): ../main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_main.cpp$(PreprocessSuffix) "../main.cpp"
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_main.cpp$(PreprocessSuffix) "../main.cpp"
 
 $(IntermediateDirectory)/Arqueiro_Data.cpp$(ObjectSuffix): ../Data.cpp $(IntermediateDirectory)/Arqueiro_Data.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/git/Arqueiro/Arqueiro/Arqueiro/Data.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_Data.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/FACOMP/git/Arqueiro/Arqueiro/Data.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_Data.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Arqueiro_Data.cpp$(DependSuffix): ../Data.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Arqueiro_Data.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Arqueiro_Data.cpp$(DependSuffix) -MM "../Data.cpp"
 
 $(IntermediateDirectory)/Arqueiro_Data.cpp$(PreprocessSuffix): ../Data.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_Data.cpp$(PreprocessSuffix) "../Data.cpp"
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_Data.cpp$(PreprocessSuffix) "../Data.cpp"
 
 $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix): ../Inimigo.cpp $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/git/Arqueiro/Arqueiro/Arqueiro/Inimigo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/FACOMP/git/Arqueiro/Arqueiro/Inimigo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(DependSuffix): ../Inimigo.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(DependSuffix) -MM "../Inimigo.cpp"
 
 $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(PreprocessSuffix): ../Inimigo.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(PreprocessSuffix) "../Inimigo.cpp"
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arqueiro_Inimigo.cpp$(PreprocessSuffix) "../Inimigo.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
