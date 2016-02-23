@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <windows.h>
 
 using std::cout;
 using std::cin;
