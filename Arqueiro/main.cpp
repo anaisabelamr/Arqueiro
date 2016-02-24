@@ -29,7 +29,7 @@ int main()
         
     cout << "Nome do Arqueiro: " << a.getNome() << endl;
     
-	d.dataBatalha();
+//	d.dataBatalha();
     
     cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp();
 	
@@ -43,10 +43,7 @@ int main()
 	{
 		a.atirar(f,i);
 	}
-	else
-	{
-		cin;
-	}
+
 
 		a.defesa(false);
 

@@ -10,6 +10,9 @@ using std::string;
 
 class Arqueiro
 {
+    
+    friend ostream &operator<<(ostream &, const Arqueiro &);
+    
 public:
     Arqueiro();
     Arqueiro(int hp, int sp, const string nome);
@@ -26,10 +29,12 @@ public:
     void adicionarFlechas(const int &);
 	void diminuirSp();
 	void diminuirHp();
+//    ostream &operator<<(ostream &output, const Arqueiro &arqueiro);
 private:
 	string nome;
 	bool bemSucedida;
-    int *novasFlechas;
+    int *flechas;
+    int nFlechas;
 	const static int spMax = 20;
 	const static double hpMax = 50;
 	int hp;

@@ -15,7 +15,7 @@ Arqueiro::Arqueiro()
     this->nome = "";
     hp = 0;
     sp = 0;
-    novasFlechas = 0;
+ //   novasFlechas = 0;
 }
 Arqueiro::Arqueiro(int hp, int sp, const string nome)
 {
@@ -119,26 +119,31 @@ void Arqueiro::diminuirSp()
 {
     if (flechas != 0)
     {
-        int * aux = new int[flechasMax];
+        int * aux = new int[nFlechas];
         
-        for (int i = 0; i < flechasMax; i++)
+        for (int i = 0; i < nFlechas; i++)
             aux[i] = flechas[i];
             
         delete [] flechas;
             
-        flechas = new int [ ++flechasMax ] ;
+        flechas = new int [ ++nFlechas ] ;
             
-        for (int i = 0; i < flechasMax-1; i++)
+        for (int i = 0; i < nFlechas-1; i++)
                 flechas[i] = aux [i];
     
-        flechas[flechasMax-1] = novasFlechas;
+        flechas[nFlechas-1] = novasFlechas;
         delete [] aux;
     }
     else
     {
-        flechas = new int [ ++flechasMax];
+        flechas = new int [ ++nFlechas];
         flechas[0] = flechasNovas;
     }
 }
 */
+
+/*ostream &operator<<(ostream &output, const Arqueiro &arqueiro)
+{
+    output << "(" << arqueiro.
+}*/
 
