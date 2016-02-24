@@ -6,8 +6,10 @@ using namespace std;
 using std::cout;
 using std::cin;
 
-Data data;
-
+Data::Data()
+{
+    
+}
 Data::Data(int dia, int mes, int ano)
 {
     this-> dia=checarDia(dia,mes,ano);
@@ -32,9 +34,9 @@ int Data::checarDia(int dia, int mes, int ano)
 void Data::dataBatalha(int dia, int mes, int ano)
 {
 	cout << "Digite a data da Batalha (DD/MM/AAAA)\n";
-    inserirDia();
-    inserirMes();
-    inserirAno();
+    inserirDia(dia);
+    inserirMes(mes);
+    inserirAno(ano);
     
 	
 	cout << "\n\nData da batalha: " << dia << "/" << mes << "/" << ano ;
@@ -42,17 +44,17 @@ void Data::dataBatalha(int dia, int mes, int ano)
 void Data::inserirDia(int dia)
 {
     cout << "\nDia: ";
-    cin >> dia;
+    cin >> this->dia;
 }
 void Data::inserirMes(int mes)
 {
     cout << "\nMes: ";
-    cin >> mes;
+    cin >> this->mes;
 }
 void Data::inserirAno(int ano)
 {
     cout << "\nAno: ";
-    cin >> ano;
+    cin >> this->ano;
 }
 
 Data::~Data()
