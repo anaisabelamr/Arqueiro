@@ -17,6 +17,7 @@ public:
     void setHp(int );
     int getHp();
     void diminuirHp();
+	void inimigoMorto();
 private:
 	string nome;
     int hp;

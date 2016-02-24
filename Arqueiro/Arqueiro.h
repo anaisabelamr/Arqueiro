@@ -3,6 +3,7 @@
 #include <string>
 #include "Data.h" //incluindo a classe Data
 #include "Inimigo.h"
+#include "Flechas.h"
 
 using namespace std;
 using std::string;
@@ -19,18 +20,16 @@ public:
     int getHp();
     void setSp(int );
     int getSp();
-	void setFlechas(int );
-	int getFlechas();
-    void atirar(int , Inimigo &);
+    void atirar(Flechas &, Inimigo &);
     bool defesa(bool);
     void furtividade();
     void adicionarFlechas(const int &);
+	void diminuirSp();
+	void diminuirHp();
 private:
-	int flechas;
 	string nome;
 	bool bemSucedida;
     int *novasFlechas;
-	const static int flechasMax = 20;
 	const static int spMax = 20;
 	const static double hpMax = 50;
 	int hp;

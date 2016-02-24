@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <windows.h>
+#include "Flechas.h"
 
 using std::cout;
 using std::cin;
@@ -52,23 +53,20 @@ int Arqueiro::getSp()
 {
     return sp;
 }
-void Arqueiro::setFlechas(int flechas)
-{
-	this->flechas = flechas;
-}
-int Arqueiro::getFlechas()
-{
-	return flechas;
-}
-void Arqueiro::atirar(int flechas, Inimigo &inimigo)
+void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 {
 	int opcao;
-	flechas -= 1;
-	sp -=2;
+	cout << "Deseja atirar? [1-Sim] ";
+	cin >> opcao;
+	switch(opcao)
+	{
+		case 1:
+			flechas.escolherFlecha();
+		default:
+			cout << "Tente novamente.";
+	}
+	diminuirSp();
 
-    inimigo.diminuirHp();
-	
-	cout << "\nFlechas: " << flechas;
 	cout << "\nSP: " << sp;
 	
 	cout << "\n\nHP do inimigo: " << inimigo.getHp();
@@ -77,7 +75,7 @@ void Arqueiro::atirar(int flechas, Inimigo &inimigo)
 	cin >> opcao;
 	if (opcao == 1)
 	{
-		atirar(1, inimigo);
+		flechas.escolherFlecha();
 	}
 
 	if ((sp == 0) || (hp == 0))
@@ -92,7 +90,7 @@ void Arqueiro::furtividade()
     cout << "\nSP " << sp;
     hp+=10;
     sp+=4;
-    //sleep(3);
+    Sleep(3000);
     while ((sp <= spMax) && (hp <= hpMax))
     {
         furtividade();
@@ -113,7 +111,11 @@ bool Arqueiro::defesa(bool bemSucedida)
 		return true;
 	}
 }
-void adicionarFlechas(const int &novasFlechas)
+void Arqueiro::diminuirSp()
+{
+	sp -= 2;
+}
+/*void adicionarFlechas(const int &novasFlechas)
 {
     if (flechas != 0)
     {
@@ -138,4 +140,5 @@ void adicionarFlechas(const int &novasFlechas)
         flechas[0] = flechasNovas;
     }
 }
+*/
 

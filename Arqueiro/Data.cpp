@@ -6,6 +6,8 @@ using namespace std;
 using std::cout;
 using std::cin;
 
+Data data;
+
 Data::Data(int dia, int mes, int ano)
 {
     this-> dia=checarDia(dia);
@@ -22,15 +24,19 @@ int Data::checarDia(int dia) const
         dia == 29 && // testa se o dia é 29
         (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)))
             return dia;
-//    cout <<"Dia inválido.\n";
+    cout <<"Dia inválido.\n";
     
     return 1;
 }    
 
-int Data::dataBatalha()
+int Data::dataBatalha(int dia, int mes, int ano)
 {
-	cout << "\nBatalha de Azincourt";
-	cout << "\nDATA: 25/10/1415";
+	cout << "Digite a data da Batalha (DD/MM/AAAA)\n";
+	cin >> dia;
+	cin >> mes;
+	cin >> ano;
+	
+	cout << "\n\nData da batalha: " << dia << "/" << mes << "/" << ano ;
 }
 
 Data::~Data()

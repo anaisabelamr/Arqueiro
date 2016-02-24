@@ -1,6 +1,8 @@
 #ifndef FLECHAS_H
 #define FLECHAS_H
 
+#include "Inimigo.h"
+
 class Flechas
 {
 public:
@@ -8,17 +10,16 @@ public:
     Flechas(int, int, int, int);
     ~Flechas();
     void escolherFlecha();
-    void atirarFlechaFogo();
-    void atirarFlechaExplosiva();
-    void atirarFlechaEnvenenada();
-    void atirarFlechaComum();
+    void atirarFlechaFogo(Inimigo &);
+    void atirarFlechaExplosiva(Inimigo &);
+    void atirarFlechaEnvenenada(Inimigo &);
+    void atirarFlechaComum(Inimigo &);
     
 private:
-    const static int flechas[20];
-    int flechaFogo;
-    int flechaExplosiva;
-    int flechaEnvenenada;
-    int flechaComum;
+    int flechaFogo = 10;
+    int flechaExplosiva = 5;
+    int flechaEnvenenada = 5;
+    int flechaComum = 20;
     
 
 };

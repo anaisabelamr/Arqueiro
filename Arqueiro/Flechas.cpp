@@ -11,6 +11,9 @@ using namespace std;
 using std::cout;
 using std::cin;
 
+Inimigo inimigo;
+
+
 Flechas::Flechas()
 {
     flechaComum = 0;
@@ -29,7 +32,7 @@ Flechas::~Flechas()
 {
 
 }
-Flechas::escolherFlecha()
+void Flechas::escolherFlecha()
 {
     int opcao;
     cout << " Qual flecha o Arqueiro deve usar?\n1-Flecha Comum\n2-Flecha de Fogo\n3-Flecha Envenenada\n4-FlechaExplosiva\nOpcao: ";
@@ -37,34 +40,48 @@ Flechas::escolherFlecha()
     switch(opcao)
     {
         case 1:
-            atirarFlechaComum();
+            atirarFlechaComum(inimigo);
             break;
         case 2:
-            atirarFlechaFogo();
+            atirarFlechaFogo(inimigo);
             break;
         case 3:
-            atirarFlechaEnvenenada();
+            atirarFlechaEnvenenada(inimigo);
             break;
         case 4:
-            atirarFlechaExplosiva()
+            atirarFlechaExplosiva(inimigo);
             break;
         default:
             cout << "Opcao invalida, tente novamente.";
     }
 }
-Flechas::atirarFlechaFogo()
+void Flechas::atirarFlechaFogo(Inimigo &inimigo)
 {
-    
+    flechaFogo -= 1;
+	cout << "\n\nO inimigo esta queimando.";
+	Sleep(3000);
+	inimigo.inimigoMorto();
+	
 }
-Flechas::atirarFlechaExplosiva()
+void Flechas::atirarFlechaExplosiva(Inimigo &inimigo)
 {
-    
+    flechaExplosiva -= 1;
+	cout << "\n\nExplosao em 3...";
+	Sleep(2000);
+	cout << "2...";
+	Sleep(2000);
+	cout << "1...\n\nBUUUUM!!";
+	inimigo.inimigoMorto();
 }
-Flechas::atirarFlechaEnvenenada()
+void Flechas::atirarFlechaEnvenenada(Inimigo &inimigo)
 {
-    
+    flechaEnvenenada -= 1;
+	cout << "\n\nInimigo envenenado.";
+	Sleep(3000);
+	inimigo.inimigoMorto();
 }
-Flechas::atirarFlechaComum()
+void Flechas::atirarFlechaComum(Inimigo &inimigo)
 {
-    
+    flechaComum -= 1;
+	inimigo.diminuirHp();
 }

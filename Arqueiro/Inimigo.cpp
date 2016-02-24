@@ -1,5 +1,6 @@
 #include "Arqueiro.h"
 #include "Inimigo.h"
+#include "Flechas.h"
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -40,5 +41,10 @@ int Inimigo::getHp()
 void Inimigo::diminuirHp()
 {
     hp = 0.2 * hp;
+}
+void Inimigo::inimigoMorto()
+{
+	hp = 0;
+	cout << "\n\nInimigo esta derrotado. Parabens, arqueiro!";
 }
 
