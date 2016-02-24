@@ -10,10 +10,10 @@ Data data;
 
 Data::Data(int dia, int mes, int ano)
 {
-    this-> dia=checarDia(dia);
+    this-> dia=checarDia(dia,mes,ano);
 }    // 25 de outubro de 1415
     
-int Data::checarDia(int dia) const
+int Data::checarDia(int dia, int mes, int ano)
 {
     static const int diasPorMes[13]={0,31,28,31,30,30,31,31,30,31,30,31};
     
@@ -29,14 +29,30 @@ int Data::checarDia(int dia) const
     return 1;
 }    
 
-int Data::dataBatalha(int dia, int mes, int ano)
+void Data::dataBatalha(int dia, int mes, int ano)
 {
 	cout << "Digite a data da Batalha (DD/MM/AAAA)\n";
-	cin >> dia;
-	cin >> mes;
-	cin >> ano;
+    inserirDia();
+    inserirMes();
+    inserirAno();
+    
 	
 	cout << "\n\nData da batalha: " << dia << "/" << mes << "/" << ano ;
+}
+void Data::inserirDia(int dia)
+{
+    cout << "\nDia: ";
+    cin >> dia;
+}
+void Data::inserirMes(int mes)
+{
+    cout << "\nMes: ";
+    cin >> mes;
+}
+void Data::inserirAno(int ano)
+{
+    cout << "\nAno: ";
+    cin >> ano;
 }
 
 Data::~Data()

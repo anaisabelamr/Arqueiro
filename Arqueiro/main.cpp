@@ -28,7 +28,7 @@ int main()
 	i.setHp(hpMax);
         
     cout << "Nome do Arqueiro: " << a.getNome() << endl;
-	d.dataBatalha(&int, &int, &int);
+//	d.dataBatalha();
     cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp();
 	
 	cout << "\n\nInimigo: " << i.getNome() << endl;

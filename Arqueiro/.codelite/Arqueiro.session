@@ -1,72 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\git\Arqueiro\Arqueiro\Arqueiro.workspace">
-  <int Value="4" Name="m_selectedTab"/>
-  <wxString Value="C:\git\Arqueiro\Arqueiro\Arqueiro.workspace" Name="m_workspaceName"/>
+<Session Name="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Arqueiro.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Arqueiro.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\arqueiro.cpp" Name="FileName"/>
-      <int Value="105" Name="FirstVisibleLine"/>
-      <int Value="116" Name="CurrentLine"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\arqueiro.cpp" Name="FileName"/>
+      <int Value="57" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\Arqueiro.h" Name="FileName"/>
-      <int Value="21" Name="FirstVisibleLine"/>
-      <int Value="35" Name="CurrentLine"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Arqueiro.h" Name="FileName"/>
+      <int Value="9" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\Flechas.cpp" Name="FileName"/>
-      <int Value="70" Name="FirstVisibleLine"/>
-      <int Value="87" Name="CurrentLine"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Data.cpp" Name="FileName"/>
+      <int Value="8" Name="FirstVisibleLine"/>
+      <int Value="36" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="17"/>
-      </IntVector>
+      <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\Flechas.h" Name="FileName"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Data.h" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="13" Name="CurrentLine"/>
+      <int Value="16" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\main.cpp" Name="FileName"/>
-      <int Value="44" Name="FirstVisibleLine"/>
-      <int Value="59" Name="CurrentLine"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Flechas.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\Inimigo.cpp" Name="FileName"/>
-      <int Value="31" Name="FirstVisibleLine"/>
-      <int Value="48" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="32"/>
-      </IntVector>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\Inimigo.h" Name="FileName"/>
-      <int Value="12" Name="FirstVisibleLine"/>
-      <int Value="26" Name="CurrentLine"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Flechas.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\Data.cpp" Name="FileName"/>
-      <int Value="25" Name="FirstVisibleLine"/>
-      <int Value="40" Name="CurrentLine"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Inimigo.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\git\Arqueiro\Arqueiro\Data.h" Name="FileName"/>
-      <int Value="6" Name="FirstVisibleLine"/>
-      <int Value="19" Name="CurrentLine"/>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\Inimigo.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\FACOMP\git\Arqueiro\Arqueiro\main.cpp" Name="FileName"/>
+      <int Value="13" Name="FirstVisibleLine"/>
+      <int Value="30" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
