@@ -28,14 +28,31 @@ Arqueiro::~Arqueiro()
 {
     
 }
-
+ostream &operator<<(ostream &output, const Arqueiro &imprime)
+{
+    output << "NOME DO ARQUEIRO: " << imprime.nome << "\nHP: " << imprime.hp << "\nSP: " << imprime.sp;
+    return output;
+}
+bool Arqueiro::operator ==(const Arqueiro &comparaArqueiro) const
+{
+    if(comparaArqueiro.nome != nome) return false;
+    if(comparaArqueiro.hp != hp) return false;
+    if(comparaArqueiro.sp != sp) return false;
+    return true;
+}
+const Arqueiro & Arqueiro::operator =(const Arqueiro &atributo)
+{
+    nome = atributo.nome;
+    hp = atributo.hp;
+    sp = atributo.sp;
+}
 void Arqueiro::setNome(string nome)
 {
     this->nome = nome;
 }
 string Arqueiro::getNome()
 {
-    return nome;
+    return this->nome;
 }
 void Arqueiro::setHp(int hp)
 {
@@ -43,7 +60,7 @@ void Arqueiro::setHp(int hp)
 }
 int Arqueiro::getHp()
 {
-    return hp;
+    return this->hp;
 }
 void Arqueiro::setSp(int sp)
 {
@@ -51,8 +68,13 @@ void Arqueiro::setSp(int sp)
 }
 int Arqueiro::getSp()
 {
-    return sp;
+    return this->sp;
 }
+void Arqueiro::dataBatalha(Data &data)
+{
+    data.dataBatalha(data.getDia(), data.getMes(), data.getAno());
+}
+
 void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 {
 	int opcao;
@@ -142,8 +164,4 @@ void Arqueiro::diminuirSp()
 }
 */
 
-/*ostream &operator<<(ostream &output, const Arqueiro &arqueiro)
-{
-    output << "(" << arqueiro.
-}*/
 

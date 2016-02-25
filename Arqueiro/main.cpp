@@ -19,6 +19,8 @@ int main()
 	Inimigo i;
 	Data d();
 	Flechas f;
+    
+    a.dataBatalha(d);
         
     a.setNome("Oliver Queen\n");
 	a.setHp(hpMax);
@@ -29,7 +31,7 @@ int main()
         
     cout << "Nome do Arqueiro: " << a.getNome() << endl;
     
-//	d.dataBatalha();
+
     
     cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp();
 	

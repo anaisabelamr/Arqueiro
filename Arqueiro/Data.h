@@ -14,6 +14,12 @@ public:
     void imprimirData() const;
     ~Data();
 	void dataBatalha(int, int, int);
+    void setDia(int );
+    void setMes(int );
+    void setAno(int );
+    int getDia();
+    int getMes();
+    int getAno();
     void inserirDia(int );
     void inserirMes(int );
     void inserirAno(int );

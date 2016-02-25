@@ -7,6 +7,7 @@
 
 using namespace std;
 using std::string;
+using std::ostream;
 
 class Arqueiro
 {
@@ -14,6 +15,10 @@ class Arqueiro
     friend ostream &operator<<(ostream &, const Arqueiro &);
     
 public:
+    
+    const Arqueiro &operator=(const Arqueiro &);
+    bool operator==(const Arqueiro &) const;
+
     Arqueiro();
     Arqueiro(int hp, int sp, const string nome);
     ~Arqueiro();
@@ -23,6 +28,7 @@ public:
     int getHp();
     void setSp(int );
     int getSp();
+    void dataBatalha(Data &);
     void atirar(Flechas &, Inimigo &);
     bool defesa(bool);
     void furtividade();
