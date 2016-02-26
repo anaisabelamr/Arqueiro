@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <windows.h>
 
+//refazer o main
+
 using namespace std;
 using std::cout;
 using std::cin;

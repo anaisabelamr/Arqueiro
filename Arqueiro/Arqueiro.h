@@ -5,6 +5,8 @@
 #include "Inimigo.h"
 #include "Flechas.h"
 
+//refazer o main
+
 using namespace std;
 using std::string;
 using std::ostream;
@@ -20,7 +22,7 @@ public:
     bool operator==(const Arqueiro &) const;
 
     Arqueiro();
-    Arqueiro(int hp, int sp, const string nome);
+    Arqueiro(int hp, int sp, const string nome, Data &);
     ~Arqueiro();
     void setNome(const string);
     string getNome();
@@ -28,21 +30,20 @@ public:
     int getHp();
     void setSp(int );
     int getSp();
-    void dataBatalha(Data &);
+	static const void dadosArqueiro();
     void atirar(Flechas &, Inimigo &);
     bool defesa(bool);
     void furtividade();
     void adicionarFlechas(const int &);
 	void diminuirSp();
-	void diminuirHp();
-//    ostream &operator<<(ostream &output, const Arqueiro &arqueiro);
 private:
 	string nome;
+	Data dataBatalha;
 	bool bemSucedida;
     int *flechas;
     int nFlechas;
-	const static int spMax = 20;
-	const static double hpMax = 50;
+	const static int spMax;
+	const static double hpMax;
 	int hp;
 	int sp;
 };

@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <windows.h>
 
+//refazer o main
+
 const static double hpMax = 50.0;
 const static int spMax = 20;
 
@@ -15,26 +17,22 @@ using namespace std;
 
 int main()
 {
-    Arqueiro a;
+    Arqueiro arq;
 	Inimigo i;
-	Data d();
+	Data d(15,6,2015);
 	Flechas f;
     
-    a.dataBatalha(d);
-        
-    a.setNome("Oliver Queen\n");
-	a.setHp(hpMax);
-	a.setSp(spMax);
+	arq.setNome("Oliver Queen\n");
+	arq.setHp(hpMax);
+	arq.setSp(spMax);
 	
 	i.setNome("Malcom Merlin\n");
 	i.setHp(hpMax);
-        
-    cout << "Nome do Arqueiro: " << a.getNome() << endl;
-    
 
-    
-    cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp();
-	
+	d.imprimirData();
+
+	arq.dadosArqueiro();
+
 	cout << "\n\nInimigo: " << i.getNome() << endl;
 	cout << "\nHP: " << i.getHp() << endl;
 	
@@ -43,19 +41,19 @@ int main()
 	cin >> opcao;
 	if (opcao == 1)
 	{
-		a.atirar(f,i);
+		arq.atirar(f,i);
 	}
 
 
-		a.defesa(false);
+		arq.defesa(false);
 
 	do 
 	{
-		a.furtividade();
+		arq.furtividade();
 	}
-	while ((a.getSp() <= spMax) || (a.getHp() <= hpMax));
+	while ((arq.getSp() <= spMax) || (arq.getHp() <= hpMax));
 	
-	a.defesa(true);
+	arq.defesa(true);
     
 	return 0;
 }

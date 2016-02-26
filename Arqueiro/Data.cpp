@@ -6,15 +6,15 @@ using namespace std;
 using std::cout;
 using std::cin;
 
-Data::Data()
-{
-    
-}
+//refazer o main
+
 Data::Data(int dia, int mes, int ano)
 {
     this-> dia=checarDia(dia,mes,ano);
-}    // 25 de outubro de 1415
-    
+}    
+Data::~Data()
+{
+}
 int Data::checarDia(int dia, int mes, int ano)
 {
     static const int diasPorMes[13]={0,31,28,31,30,30,31,31,30,31,30,31};
@@ -30,58 +30,11 @@ int Data::checarDia(int dia, int mes, int ano)
     
     return 1;
 }    
+void Data::imprimirData() const
+{
+	cout << "GUERRA DOS RENEGADOS";
+	cout << "DATA (DD/MM/AAAA): " << dia << "/" << mes << "/" << ano ;
+}
 
-void Data::dataBatalha(int dia, int mes, int ano)
-{
-	cout << "Digite a data da Batalha (DD/MM/AAAA)\n";
-    inserirDia(dia);
-    inserirMes(mes);
-    inserirAno(ano);
-    
-	
-	cout << "\n\nData da batalha: " << dia << "/" << mes << "/" << ano ;
-}
-void Data::inserirDia(int dia)
-{
-    cout << "\nDia: ";
-    cin >> this->dia;
-}
-void Data::inserirMes(int mes)
-{
-    cout << "\nMes: ";
-    cin >> this->mes;
-}
-void Data::inserirAno(int ano)
-{
-    cout << "\nAno: ";
-    cin >> this->ano;
-}
-void Data::setDia(int dia)
-{
-    this->dia = dia;
-}
-int  Data::getDia()
-{
-    return this->dia;
-}
-void Data::setMes(int mes)
-{
-    this->mes = mes;
-}
-int Data::getMes()
-{
-    return this->mes;
-}
-void Data::setAno(int ano)
-{
-    this->ano = ano;
-}
-int Data::getAno()
-{
-    return this->ano;
-}
-Data::~Data()
-{
-}
 
 

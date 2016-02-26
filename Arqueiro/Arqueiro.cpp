@@ -10,20 +10,23 @@
 using std::cout;
 using std::cin;
 
+const static int spMax = 20;
+const static double hpMax = 50; 
+
+
 Arqueiro::Arqueiro()
 {
     this->nome = "";
     hp = 0;
     sp = 0;
- //   novasFlechas = 0;
 }
-Arqueiro::Arqueiro(int hp, int sp, const string nome)
+Arqueiro::Arqueiro(int hp, int sp, const string nome, Data &date)
 {
     this->hp = hp;
     this->sp = sp;
     this->nome = nome;
+	this->dataBatalha = date;
 }    
-
 Arqueiro::~Arqueiro()
 {
     
@@ -70,11 +73,12 @@ int Arqueiro::getSp()
 {
     return this->sp;
 }
-void Arqueiro::dataBatalha(Data &data)
+const void Arqueiro::dadosArqueiro()
 {
-    data.dataBatalha(data.getDia(), data.getMes(), data.getAno());
+	Arqueiro a;
+	cout << "Nome do Arqueiro: " << a.getNome() << endl;
+	cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp();
 }
-
 void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 {
 	int opcao;
@@ -107,17 +111,16 @@ void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 }
 void Arqueiro::furtividade()
 {
-    cout <<"\n\nMODO FURTIVO\nDados do arqueiro";
+    do
+	{
+	cout <<"\n\nMODO FURTIVO\nDados do arqueiro";
     cout << "\nHP: " << hp;
     cout << "\nSP " << sp;
     hp+=10;
     sp+=4;
     Sleep(3000);
-    while ((sp <= spMax) && (hp <= hpMax))
-    {
-        furtividade();
-    };
-
+    }
+	while ((sp <= spMax) && (hp <= hpMax));
 }
 bool Arqueiro::defesa(bool bemSucedida)
 {
@@ -137,9 +140,9 @@ void Arqueiro::diminuirSp()
 {
 	sp -= 2;
 }
-/*void adicionarFlechas(const int &novasFlechas)
+void adicionarFlechas(int nFlechas, int *flechas, const int &novasFlechas)
 {
-    if (flechas != 0)
+    if (nFlechas != 0)
     {
         int * aux = new int[nFlechas];
         
@@ -147,8 +150,10 @@ void Arqueiro::diminuirSp()
             aux[i] = flechas[i];
             
         delete [] flechas;
+		
+		nFlechas++;
             
-        flechas = new int [ ++nFlechas ] ;
+        flechas = new int [ nFlechas ] ;
             
         for (int i = 0; i < nFlechas-1; i++)
                 flechas[i] = aux [i];
@@ -159,9 +164,9 @@ void Arqueiro::diminuirSp()
     else
     {
         flechas = new int [ ++nFlechas];
-        flechas[0] = flechasNovas;
+        flechas[0] = novasFlechas;
     }
 }
-*/
+
 
 
