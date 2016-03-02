@@ -62,7 +62,7 @@ void Flechas::atirarFlechaFogo(Inimigo &inimigo)
     flechaFogo -= 1;
 	cout << "\n\nO inimigo esta queimando.";
 	Sleep(3000);
-	inimigo.inimigoMorto();
+//	inimigo.inimigoMorto();
 	
 }
 void Flechas::atirarFlechaExplosiva(Inimigo &inimigo)
@@ -73,17 +73,17 @@ void Flechas::atirarFlechaExplosiva(Inimigo &inimigo)
 	cout << "2...";
 	Sleep(2000);
 	cout << "1...\n\nBUUUUM!!";
-	inimigo.inimigoMorto();
+//	inimigo.inimigoMorto();
 }
 void Flechas::atirarFlechaEnvenenada(Inimigo &inimigo)
 {
     flechaEnvenenada -= 1;
 	cout << "\n\nInimigo envenenado.";
 	Sleep(3000);
-	inimigo.inimigoMorto();
+//	inimigo.inimigoMorto();
 }
 void Flechas::atirarFlechaComum(Inimigo &inimigo)
 {
     flechaComum -= 1;
-	inimigo.diminuirHp();
+//	inimigo.diminuirHp();
 }

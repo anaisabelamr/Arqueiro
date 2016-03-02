@@ -21,27 +21,6 @@ Inimigo::Inimigo(int hp, const string nome)
 Inimigo::~Inimigo()
 {
 }
-void Inimigo::setNome(string nome)
-{
-    this->nome = nome;
-}
-string Inimigo::getNome()
-{
-    return nome;
-}
-void Inimigo::setHp(int hp)
-{
-    this->hp = hp;
-}
-int Inimigo::getHp()
-{
-    return hp;
-}
-
-void Inimigo::diminuirHp()
-{
-    hp = 0.2 * hp;
-}
 void Inimigo::inimigoMorto()
 {
 	hp = 0;

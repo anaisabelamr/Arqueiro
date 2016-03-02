@@ -1,24 +1,19 @@
 #ifndef INIMIGO_H
 #define INIMIGO_H
 
-#include <string>
+#include "Personagem.h"
 
-//refazer o main
+#include <string>
 
 using namespace std;
 using std::string;
 
-class Inimigo
-{
+class Inimigo : public Personagem {
 public:
 	Inimigo();
 	Inimigo(int hp, const string nome);
 	~Inimigo();
-	void setNome(const string);
-    string getNome();
-    void setHp(int );
-    int getHp();
-    void diminuirHp();
+
 	void inimigoMorto();
 private:
 	string nome;

@@ -22,10 +22,10 @@ Arqueiro::Arqueiro()
 }
 Arqueiro::Arqueiro(int hp, int sp, const string nome, Data &date)
 {
-    this->hp = hp;
+/*    this->hp = hp;
     this->sp = sp;
     this->nome = nome;
-	this->dataBatalha = date;
+	this->dataBatalha = date;*/
 }    
 Arqueiro::~Arqueiro()
 {
@@ -49,35 +49,11 @@ const Arqueiro & Arqueiro::operator =(const Arqueiro &atributo)
     hp = atributo.hp;
     sp = atributo.sp;
 }
-void Arqueiro::setNome(string nome)
-{
-    this->nome = nome;
-}
-string Arqueiro::getNome()
-{
-    return this->nome;
-}
-void Arqueiro::setHp(int hp)
-{
-    this->hp = hp;
-}
-int Arqueiro::getHp()
-{
-    return this->hp;
-}
-void Arqueiro::setSp(int sp)
-{
-    this->sp = sp;
-}
-int Arqueiro::getSp()
-{
-    return this->sp;
-}
 const void Arqueiro::dadosArqueiro()
 {
 	Arqueiro a;
-	cout << "Nome do Arqueiro: " << a.getNome() << endl;
-	cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp();
+    
+
 }
 void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 {
@@ -106,39 +82,8 @@ void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 
 	if ((sp == 0) || (hp == 0))
 	{
-		furtividade();
+//		furtividade();
 	}
-}
-void Arqueiro::furtividade()
-{
-    do
-	{
-	cout <<"\n\nMODO FURTIVO\nDados do arqueiro";
-    cout << "\nHP: " << hp;
-    cout << "\nSP " << sp;
-    hp+=10;
-    sp+=4;
-    Sleep(3000);
-    }
-	while ((sp <= spMax) && (hp <= hpMax));
-}
-bool Arqueiro::defesa(bool bemSucedida)
-{
-	if (bemSucedida == false)
-	{
-		hp -= 0.2*hp;
-		cout << "\n\nDefesa mal sucedida\nHP: " << hp;
-		return false;
-	}
-	else
-	{
-		cout << "\n\nDefesa bem sucedida.\n\n";
-		return true;
-	}
-}
-void Arqueiro::diminuirSp()
-{
-	sp -= 2;
 }
 void adicionarFlechas(int nFlechas, int *flechas, const int &novasFlechas)
 {

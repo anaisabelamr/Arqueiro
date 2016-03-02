@@ -1,8 +1,9 @@
 #ifndef ESPADACHIM_H
 #define ESPADACHIM_H
 
-class Espadachim : public Personagem
-{
+#include "Personagem.h"
+
+class Espadachim : public Personagem {
     
     friend ostream &operator<<(ostream &, const Espadachim &);
     
@@ -12,8 +13,6 @@ public:
     
 public:
     void atacar();
-    bool defesa ();
-    
 protected:
     int espada;
     

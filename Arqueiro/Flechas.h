@@ -1,6 +1,8 @@
 #ifndef FLECHAS_H
 #define FLECHAS_H
 
+#include "Personagem.h"
+
 #include "Inimigo.h"
 
 class Flechas

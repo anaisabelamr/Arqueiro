@@ -11,8 +11,6 @@ class Personagem
 public:
     Personagem();
     ~Personagem();
-    
-    void diminuirSp();
     int getSp();
     int getHp();
     int setSp(int sp);
@@ -20,12 +18,16 @@ public:
     int setNome(string nome);
     void getNome();
     void diminuirHp;
+    void diminuirSp();
+    void furtividade();
+    bool defesa(bool);
     
 
 protected:
     string nome;
     int hp;
     int sp;
+	bool bemSucedida;
     const static int spMax;
     const static double hpMax;
     

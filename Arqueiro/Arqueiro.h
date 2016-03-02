@@ -2,6 +2,7 @@
 #define ARQUEIRO_H
 #include <string>
 #include "Data.h" //incluindo a classe Data
+#include "Personagem.h"
 #include "Inimigo.h"
 #include "Flechas.h"
 
@@ -11,8 +12,7 @@ using namespace std;
 using std::string;
 using std::ostream;
 
-class Arqueiro
-{
+class Arqueiro : public Personagem {
     
     friend ostream &operator<<(ostream &, const Arqueiro &);
     
@@ -20,31 +20,15 @@ public:
     
     const Arqueiro &operator=(const Arqueiro &);
     bool operator==(const Arqueiro &) const;
-
     Arqueiro();
-    Arqueiro(int hp, int sp, const string nome, Data &);
+//    Arqueiro(int hp, int sp, const string nome, Data &);
     ~Arqueiro();
-    void setNome(const string);
-    string getNome();
-    void setHp(int );
-    int getHp();
-    void setSp(int );
-    int getSp();
 	static const void dadosArqueiro();
     void atirar(Flechas &, Inimigo &);
-    bool defesa(bool);
-    void furtividade();
     void adicionarFlechas(const int &);
-	void diminuirSp();
 private:
-	string nome;
 	Data dataBatalha;
-	bool bemSucedida;
     int *flechas;
     int nFlechas;
-	const static int spMax;
-	const static double hpMax;
-	int hp;
-	int sp;
 };
 #endif // ARQUEIRO_H
