@@ -87,3 +87,11 @@ void Flechas::atirarFlechaComum(Inimigo &inimigo)
     flechaComum -= 1;
 	inimigo.diminuirHp();
 }
+bool Flechas::operator!=(const Flechas &flechaCompara) const
+{
+    if(flechaCompara.flechaComum == flechaComum) return false;
+    if(flechaCompara.flechaEnvenenada == flechaEnvenenada) return false;
+    if(flechaCompara.flechaExplosiva == flechaExplosiva) return false;
+    if(flechaCompara.flechaFogo == flechaFogo) return false;
+    return true;
+}

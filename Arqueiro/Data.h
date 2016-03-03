@@ -11,6 +11,9 @@ using std::cin;
 class Data
 {
 public:
+
+    bool operator!=(const Data &) const;
+
     Data(int = 15, int = 10, int= 1415);
     void imprimirData() const;
     ~Data();

@@ -10,9 +10,8 @@
 using std::cout;
 using std::cin;
 
-const static int spMax = 20;
-const static double hpMax = 50; 
-
+const double Arqueiro::hpMax = 50.0;
+const int Arqueiro::spMax = 20;
 
 Arqueiro::Arqueiro()
 {
@@ -29,7 +28,7 @@ Arqueiro::Arqueiro(int hp, int sp, const string nome, Data &date)
 }    
 Arqueiro::~Arqueiro()
 {
-    
+    delete [] flechas;
 }
 ostream &operator<<(ostream &output, const Arqueiro &imprime)
 {
@@ -38,9 +37,14 @@ ostream &operator<<(ostream &output, const Arqueiro &imprime)
 }
 bool Arqueiro::operator ==(const Arqueiro &comparaArqueiro) const
 {
+    int f;
     if(comparaArqueiro.nome != nome) return false;
     if(comparaArqueiro.hp != hp) return false;
     if(comparaArqueiro.sp != sp) return false;
+    if(comparaArqueiro.dataBatalha != dataBatalha) return false;
+    if(comparaArqueiro.bemSucedida != bemSucedida) return false;
+    if(comparaArqueiro.nFlechas != nFlechas) return false;
+    if (comparaArqueiro.flechas[f] != flechas[f] ) return false;
     return true;
 }
 const Arqueiro & Arqueiro::operator =(const Arqueiro &atributo)

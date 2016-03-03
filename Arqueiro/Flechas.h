@@ -6,6 +6,9 @@
 class Flechas
 {
 public:
+
+    bool operator!=(const Flechas &) const;
+    
     Flechas();
     Flechas(int, int, int, int);
     ~Flechas();

@@ -36,14 +36,14 @@ public:
     void furtividade();
     void adicionarFlechas(const int &);
 	void diminuirSp();
+	const static int spMax;
+	const static double hpMax;
 private:
 	string nome;
 	Data dataBatalha;
 	bool bemSucedida;
-    int *flechas;
-    int nFlechas;
-	const static int spMax;
-	const static double hpMax;
+    Flechas *flechas;
+    Flechas nFlechas;
 	int hp;
 	int sp;
 };

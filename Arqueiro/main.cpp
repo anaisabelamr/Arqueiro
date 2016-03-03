@@ -10,9 +10,6 @@
 
 //refazer o main
 
-const static double hpMax = 50.0;
-const static int spMax = 20;
-
 using namespace std;
 
 int main()
@@ -23,11 +20,11 @@ int main()
 	Flechas f;
     
 	arq.setNome("Oliver Queen\n");
-	arq.setHp(hpMax);
-	arq.setSp(spMax);
+	arq.setHp(Arqueiro::hpMax);
+	arq.setSp(Arqueiro::spMax);
 	
 	i.setNome("Malcom Merlin\n");
-	i.setHp(hpMax);
+	i.setHp(Arqueiro::hpMax);
 
 	d.imprimirData();
 
@@ -51,7 +48,7 @@ int main()
 	{
 		arq.furtividade();
 	}
-	while ((arq.getSp() <= spMax) || (arq.getHp() <= hpMax));
+	while ((arq.getSp() <= Arqueiro::spMax) || (arq.getHp() <= Arqueiro::hpMax));
 	
 	arq.defesa(true);
     

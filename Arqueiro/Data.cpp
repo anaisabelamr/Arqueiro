@@ -36,5 +36,12 @@ void Data::imprimirData() const
 	cout << "DATA (DD/MM/AAAA): " << dia << "/" << mes << "/" << ano ;
 }
 
+bool Data::operator!=(const Data &dataCompara) const
+{
+    if(dataCompara.dia == dia) return false;
+    if(dataCompara.mes == mes) return false;
+    if(dataCompara.ano == ano) return false;
+    return true;
+}
 
 

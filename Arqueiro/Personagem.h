@@ -1,7 +1,12 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
 
+#include <iostream>
 #include <string.h>
+
+using namespace std;
+using std::string;
+using std::ostream;
 
 class Personagem
 {
@@ -19,7 +24,7 @@ public:
     int setHp(int hp);
     int setNome(string nome);
     void getNome();
-    void diminuirHp;
+    void diminuirHp();
     
 
 protected:
