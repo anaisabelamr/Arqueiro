@@ -18,13 +18,17 @@ Arqueiro::Arqueiro()
     this->nome = "";
     hp = 0;
     sp = 0;
+    
 }
-Arqueiro::Arqueiro(int hp, int sp, const string nome, Data &date)
+Arqueiro::Arqueiro(int hp, int sp, bool bemSucedida, const string nome, Data &date, Flechas *flecha, Flechas &nFlechas)
 {
     this->hp = hp;
     this->sp = sp;
     this->nome = nome;
 	this->dataBatalha = date;
+    this->flechas = flecha;
+    this->nFlechas = nFlechas;
+    this-> bemSucedida = bemSucedida;
 }    
 Arqueiro::~Arqueiro()
 {
@@ -80,7 +84,7 @@ int Arqueiro::getSp()
 const void Arqueiro::dadosArqueiro()
 {
 	Arqueiro a;
-	cout << "Nome do Arqueiro: " << a.getNome() << endl;
+	cout << "\n\nNome do Arqueiro: " << a.getNome() << endl;
 	cout << "\n\nHP: " << a.getHp() << "\nSP: " << a.getSp();
 }
 void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)

@@ -22,7 +22,7 @@ public:
     bool operator==(const Arqueiro &) const;
 
     Arqueiro();
-    Arqueiro(int hp, int sp, const string nome, Data &);
+    Arqueiro(int hp, int sp, bool bemSucedida, const string nome, Data &, Flechas *, Flechas &);
     ~Arqueiro();
     void setNome(const string);
     string getNome();
