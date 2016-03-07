@@ -9,8 +9,6 @@
 #include <stdio.h>
 #include <windows.h>
 
-//refazer o main
-
 const static double hpMax = 50.0;
 const static int spMax = 20;
 

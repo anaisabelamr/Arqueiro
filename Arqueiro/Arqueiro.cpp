@@ -1,5 +1,6 @@
 #include "Arqueiro.h"
 #include "Inimigo.h"
+#include "Personagem.h"
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -10,9 +11,8 @@
 using std::cout;
 using std::cin;
 
-const static int spMax = 20;
-const static double hpMax = 50; 
-
+const int spMax = 20;
+const double hpMax = 50;
 
 Arqueiro::Arqueiro()
 {
@@ -22,10 +22,10 @@ Arqueiro::Arqueiro()
 }
 Arqueiro::Arqueiro(int hp, int sp, const string nome, Data &date)
 {
-/*    this->hp = hp;
+    this->hp = hp;
     this->sp = sp;
     this->nome = nome;
-	this->dataBatalha = date;*/
+	this->dataBatalha = date;
 }    
 Arqueiro::~Arqueiro()
 {
@@ -55,10 +55,10 @@ const void Arqueiro::dadosArqueiro()
     
 
 }
-void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
+void Arqueiro::atirar(Inimigo &inimigo)
 {
 	int opcao;
-	cout << "Deseja atirar? [1-Sim] ";
+	cout << "ARQUEIRO, DESEJA ATIRAR? [1-Sim] ";
 	cin >> opcao;
 	switch(opcao)
 	{
@@ -67,11 +67,11 @@ void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 		default:
 			cout << "Tente novamente.";
 	}
-	diminuirSp();
+	
 
 	cout << "\nSP: " << sp;
 	
-	cout << "\n\nHP do inimigo: " << inimigo.getHp();
+	//cout << "\n\nHP do inimigo: " << inimigo.getHp();
 	
 	cout << "\n\nAtirar novamente? [1-Sim]  ";
 	cin >> opcao;
@@ -85,20 +85,20 @@ void Arqueiro::atirar(Flechas &flechas, Inimigo &inimigo)
 //		furtividade();
 	}
 }
-void adicionarFlechas(int nFlechas, int *flechas, const int &novasFlechas)
+void adicionarFlechas(Flechas flechas, const int &novasFlechas)
 {
-    if (nFlechas != 0)
+    /*if (flechas.getNumeroFlechas() != 0)
     {
-        int * aux = new int[nFlechas];
+        int * aux = new int[flechas.getNumeroFlechas()];
         
-        for (int i = 0; i < nFlechas; i++)
+        for (int i = 0; i < flechas.getNumeroFlechas(); i++)
             aux[i] = flechas[i];
             
         delete [] flechas;
 		
-		nFlechas++;
+		flechas.addNumFlechas(novasFlechas);
             
-        flechas = new int [ nFlechas ] ;
+        flechas = new int [ flechas.getNumeroFlechas()] ;
             
         for (int i = 0; i < nFlechas-1; i++)
                 flechas[i] = aux [i];
@@ -110,7 +110,9 @@ void adicionarFlechas(int nFlechas, int *flechas, const int &novasFlechas)
     {
         flechas = new int [ ++nFlechas];
         flechas[0] = novasFlechas;
-    }
+    }*/
+	
+	flechas.addNumFlechas(novasFlechas);
 }
 
 

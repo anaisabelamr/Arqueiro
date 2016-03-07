@@ -104,6 +104,8 @@
     <File Name="../Espadachim.cpp"/>
     <File Name="../Personagem.h"/>
     <File Name="../Personagem.cpp"/>
+    <File Name="../Hunter.h"/>
+    <File Name="../Hunter.cpp"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>

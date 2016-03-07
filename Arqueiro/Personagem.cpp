@@ -1,11 +1,23 @@
 #include "Personagem.h"
 #include <windows.h>
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+
+using std::cout;
+using std::cin;
+
 
 Personagem::Personagem()
 {
 }
-
+Personagem::Personagem(string nome, int hp, int sp, bool bemSucedida)
+{
+	this->nome = nome;
+    this->hp = hp;
+    this->sp = sp;
+	this->bemSucedida = bemSucedida;
+}
 Personagem::~Personagem()
 {
 }

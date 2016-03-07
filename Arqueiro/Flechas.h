@@ -16,13 +16,14 @@ public:
     void atirarFlechaExplosiva(Inimigo &);
     void atirarFlechaEnvenenada(Inimigo &);
     void atirarFlechaComum(Inimigo &);
-    
+	int getNumeroFlechas();
+	void addNumFlechas(int);
 private:
     int flechaFogo = 10;
     int flechaExplosiva = 5;
     int flechaEnvenenada = 5;
     int flechaComum = 20;
-    
+    int nFlechas = 40;
 
 };
 

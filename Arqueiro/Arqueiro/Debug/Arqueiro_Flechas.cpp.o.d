@@ -1,10 +1,12 @@
-Debug/Arqueiro_Flechas.cpp.o: ../Flechas.cpp ../Flechas.h ../Inimigo.h \
- ../Arqueiro.h ../Data.h
+Debug/Arqueiro_Flechas.cpp.o: ../Flechas.cpp ../Flechas.h ../Personagem.h \
+ ../Arqueiro.h ../Data.h ../Inimigo.h
 
 ../Flechas.h:
 
-../Inimigo.h:
+../Personagem.h:
 
 ../Arqueiro.h:
 
 ../Data.h:
+
+../Inimigo.h:

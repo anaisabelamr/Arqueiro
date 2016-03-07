@@ -1,6 +1,7 @@
 #include "Arqueiro.h"
 #include "Inimigo.h"
 #include "Flechas.h"
+#include "Personagem.h"
 #include <string>
 #include <iostream>
 #include <stdlib.h>
