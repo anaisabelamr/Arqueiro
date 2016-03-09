@@ -29,6 +29,13 @@ Flechas::Flechas(int flechaFogo, int flechaExplosiva, int flechaEnvenenada, int 
     this->flechaEnvenenada = flechaEnvenenada;
     this->flechaComum = flechaComum;
 }
+Flechas::Flechas(const Flechas &flechas)
+{
+    this->flechaFogo = flechas.flechaFogo;
+    this->flechaExplosiva = flechas.flechaExplosiva;
+    this->flechaEnvenenada = flechas.flechaEnvenenada;
+    this->flechaComum = flechas.flechaComum;
+}
 Flechas::~Flechas()
 {
 

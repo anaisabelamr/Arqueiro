@@ -13,6 +13,7 @@ class Inimigo : public Personagem
 public:
 	Inimigo();
 	Inimigo(int hp, const string nome);
+	Inimigo(const Inimigo &);
 	~Inimigo();
 	void inimigoMorto();
 private:

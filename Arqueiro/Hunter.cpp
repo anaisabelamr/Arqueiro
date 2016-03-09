@@ -6,8 +6,18 @@
 
 Hunter::Hunter()
 {
+	this->nome = nome;
+    this->hp = hp;
+    this->sp = sp;
+	this->bemSucedida = bemSucedida;
 }
-
+Hunter::Hunter(const Hunter &hunter)
+{
+	this->nome = hunter.nome;
+    this->hp = hunter.hp;
+    this->sp = hunter.sp;
+	this->bemSucedida = hunter.bemSucedida;
+}
 Hunter::~Hunter()
 {
 }

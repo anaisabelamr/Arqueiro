@@ -18,6 +18,13 @@ Personagem::Personagem(string nome, int hp, int sp, bool bemSucedida)
     this->sp = sp;
 	this->bemSucedida = bemSucedida;
 }
+Personagem::Personagem(const Personagem &personagem)
+{
+	this->nome = personagem.nome;
+    this->hp = personagem.hp;
+    this->sp = personagem.sp;
+	this->bemSucedida = personagem.bemSucedida;
+}
 Personagem::~Personagem()
 {
 }

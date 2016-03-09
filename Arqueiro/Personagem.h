@@ -15,6 +15,7 @@ class Personagem
 public:
     Personagem();
 	Personagem(string, int, int, bool);
+	Personagem(const Personagem &);
     ~Personagem();
     int getSp();
     int getHp();

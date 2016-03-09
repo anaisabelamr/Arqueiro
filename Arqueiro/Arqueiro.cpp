@@ -8,6 +8,7 @@
 #include <windows.h>
 #include "Flechas.h"
 
+using std::ostream;
 using std::cout;
 using std::cin;
 
@@ -27,6 +28,14 @@ Arqueiro::Arqueiro(int hp, int sp, const string nome, Data &date)
     this->nome = nome;
 	this->dataBatalha = date;
 }    
+Arqueiro::Arqueiro(const Arqueiro &arqueiro)
+{
+	this -> hp = arqueiro.hp;
+	this -> sp = arqueiro.sp;
+	this -> nome = arqueiro.nome;
+	this->bemSucedida = arqueiro.bemSucedida;
+	this -> dataBatalha = arqueiro.dataBatalha;
+}
 Arqueiro::~Arqueiro()
 {
     

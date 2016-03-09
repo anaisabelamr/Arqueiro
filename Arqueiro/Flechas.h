@@ -10,6 +10,7 @@ class Flechas
 public:
     Flechas();
     Flechas(int, int, int, int);
+	Flechas(const Flechas &);
     ~Flechas();
     void escolherFlecha();
     void atirarFlechaFogo(Inimigo &);

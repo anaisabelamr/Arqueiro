@@ -8,6 +8,7 @@ class Hunter : Arqueiro
 {
 public:
 	Hunter();
+	Hunter(const Hunter &)
 	~Hunter();
 	void atacarArmadilha();
 private:

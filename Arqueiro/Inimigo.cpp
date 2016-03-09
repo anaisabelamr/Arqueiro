@@ -18,7 +18,11 @@ Inimigo::Inimigo(int hp, const string nome)
     this->hp = hp;
     this->nome = nome;
 }    
-
+Inimigo::Inimigo(const Inimigo &inimigo)
+{
+	this -> hp = inimigo.hp;
+	this -> nome = inimigo.nome;
+}
 Inimigo::~Inimigo()
 {
 }
