@@ -22,15 +22,16 @@ public:
     const Arqueiro &operator=(const Arqueiro &);
     bool operator==(const Arqueiro &) const;
 
-    Arqueiro();
-    Arqueiro(int hp, int sp, const string nome, Data &);
+	Arqueiro();
 	Arqueiro(const Arqueiro &);
     ~Arqueiro();
 	static const void dadosArqueiro();
     void atirar(Inimigo &);
     void adicionarFlechas(const int &);
+	void setDataBatalha(Data dataBatalha);
+	int getDataBatalha();
 private:
+	Flechas flechas;
 	Data dataBatalha;
-    Flechas flechas;
 };
 #endif // ARQUEIRO_H

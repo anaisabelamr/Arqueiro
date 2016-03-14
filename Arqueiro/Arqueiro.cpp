@@ -17,33 +17,22 @@ const double hpMax = 50;
 
 Arqueiro::Arqueiro()
 {
-    this->nome = "";
-    hp = 0;
-    sp = 0;
+    dataBatalha = 0;
 }
-Arqueiro::Arqueiro(int hp, int sp, const string nome, Data &date)
-{
-    this->hp = hp;
-    this->sp = sp;
-    this->nome = nome;
-	this->dataBatalha = date;
-}    
+
 Arqueiro::Arqueiro(const Arqueiro &arqueiro)
+:Personagem(static_cast <Personagem> (arqueiro))
 {
-	this -> hp = arqueiro.hp;
-	this -> sp = arqueiro.sp;
-	this -> nome = arqueiro.nome;
-	this->bemSucedida = arqueiro.bemSucedida;
 	this -> dataBatalha = arqueiro.dataBatalha;
+	this -> flechas = arqueiro.flechas;
 }
 Arqueiro::~Arqueiro()
 {
     
 }
-ostream &operator<<(ostream &output, const Arqueiro &imprime)
+ostream &operator<<(ostream &output, Arqueiro &arqueiro)
 {
-    output << "NOME DO ARQUEIRO: " << imprime.nome << "\nHP: " << imprime.hp << "\nSP: " << imprime.sp;
-    return output;
+	output << static_cast <Personagem> (arqueiro);
 }
 bool Arqueiro::operator ==(const Arqueiro &comparaArqueiro) const
 {
@@ -64,6 +53,7 @@ const void Arqueiro::dadosArqueiro()
     
 
 }
+
 void Arqueiro::atirar(Inimigo &inimigo)
 {
 	int opcao;

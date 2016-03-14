@@ -8,6 +8,7 @@ using std::cout;
 using std::cin;
 
 
+
 Personagem::Personagem()
 {
 }
@@ -27,6 +28,11 @@ Personagem::Personagem(const Personagem &personagem)
 }
 Personagem::~Personagem()
 {
+}
+ostream &operator<<(ostream &output, const Personagem &imprime)
+{
+    output << "NOME DO PERSONAGEM: " << imprime.nome << "\nHP: " << imprime.hp << "\nSP: " << imprime.sp;
+    return output;
 }
 void Personagem::setNome(string nome)
 {

@@ -3,24 +3,30 @@
 #include <iostream>
 #include <windows.h>
 
+using namespace std;
+using std::cout;
+using std::ostream;
 
 Hunter::Hunter()
 {
-	this->nome = nome;
-    this->hp = hp;
-    this->sp = sp;
-	this->bemSucedida = bemSucedida;
+	this->armadilha = armadilha;
+
 }
 Hunter::Hunter(const Hunter &hunter)
+:Arqueiro(static_cast <Arqueiro> (hunter))
 {
-	this->nome = hunter.nome;
-    this->hp = hunter.hp;
-    this->sp = hunter.sp;
-	this->bemSucedida = hunter.bemSucedida;
+this -> armadilha = hunter.armadilha;
 }
 Hunter::~Hunter()
 {
 }
+ostream &operator<<(ostream &output, const Hunter &hunter)
+{
+	output << static_cast <Arqueiro> (hunter);
+    output << "ARMADILHAS DISPONIVEIS: " << hunter.armadilha;
+    return output;
+}
+
 void Hunter::atacarArmadilha()
 {
 	cout << " ARMADILHA DEPOSITADA.\n ";
