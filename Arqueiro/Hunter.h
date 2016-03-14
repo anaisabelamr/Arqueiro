@@ -14,6 +14,7 @@ public:
 	Hunter(const Hunter &);
 	~Hunter();
 	void atacarArmadilha();
+	void decArmadilha();
 private:
 	int armadilha = 5;
 };

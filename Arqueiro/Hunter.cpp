@@ -30,9 +30,12 @@ ostream &operator<<(ostream &output, const Hunter &hunter)
 void Hunter::atacarArmadilha()
 {
 	cout << " ARMADILHA DEPOSITADA.\n ";
-	armadilha--;
+	decArmadilha();
 	diminuirSp();
 	Sleep(2000);
 	cout << "BUM!! \n\nO INIMIGO ESTA DERROTADO";
 }
-
+void Hunter::decArmadilha()
+{
+	armadilha--;
+}
