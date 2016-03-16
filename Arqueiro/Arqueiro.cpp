@@ -47,7 +47,7 @@ const Arqueiro & Arqueiro::operator =(const Arqueiro &atributo)
     hp = atributo.hp;
     sp = atributo.sp;
 }
-const void Arqueiro::dadosArqueiro()
+const void Arqueiro::dados()
 {
 	Arqueiro a;
     
@@ -112,6 +112,41 @@ void adicionarFlechas(Flechas flechas, const int &novasFlechas)
     }*/
 	
 	flechas.addNumFlechas(novasFlechas);
+}
+void Arqueiro::diminuirHp()
+{
+    hp = 0.2 * hp;
+}
+bool Arqueiro::defesa(bool bemSucedida)
+{
+	if (bemSucedida == false)
+	{
+		hp -= 0.2*hp;
+		cout << "\n\nDefesa mal sucedida\nHP: " << hp;
+		return false;
+	}
+	else
+	{
+		cout << "\n\nDefesa bem sucedida.\n\n";
+		return true;
+	}
+}
+void Arqueiro::diminuirSp()
+{
+	sp -= 2;
+}
+void Arqueiro::furtividade()
+{
+    do
+	{
+	cout <<"\n\nMODO FURTIVO\nDados do personagem";
+    cout << "\nHP: " << hp;
+    cout << "\nSP " << sp;
+    hp+=10;
+    sp+=4;
+    Sleep(3000);
+    }
+	while ((sp <= spMax) && (hp <= hpMax));
 }
 
 

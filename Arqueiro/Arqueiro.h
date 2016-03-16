@@ -6,9 +6,6 @@
 #include "Personagem.h"
 #include "Inimigo.h"
 
-
-//refazer o main
-
 using namespace std;
 using std::string;
 using std::ostream;
@@ -25,11 +22,11 @@ public:
 	Arqueiro();
 	Arqueiro(const Arqueiro &);
     ~Arqueiro();
-	static const void dadosArqueiro();
-    void atirar(Inimigo &);
-    void adicionarFlechas(const int &);
-	void setDataBatalha(Data dataBatalha);
-	int getDataBatalha();
+	virtual static const void dados() = 0;
+    virtual void atirar(Inimigo &) = 0;
+    virtual void adicionarFlechas(const int &);
+	virtual void setDataBatalha(Data dataBatalha);
+	virtual int getDataBatalha();
 private:
 	Flechas flechas;
 	Data dataBatalha;

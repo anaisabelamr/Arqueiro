@@ -6,7 +6,7 @@
 
 
 
-class Hunter : Arqueiro
+class Hunter : public Arqueiro
 {
 	friend ostream &operator<<(ostream &, const Hunter &);
 public:

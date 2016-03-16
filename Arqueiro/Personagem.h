@@ -17,16 +17,16 @@ public:
 	Personagem(string, int, int, bool);
 	Personagem(const Personagem &);
     ~Personagem();
-    int getSp();
-    int getHp();
-    int setSp(int);
-    void setHp(int);
-    void setNome(string);
-    string getNome();
-    void diminuirHp();
-    void diminuirSp();
-    void furtividade();
-    bool defesa(bool);
+    virtual int getSp();
+    virtual int getHp();
+    virtual int setSp(int);
+    virtual void setHp(int);
+    virtual void setNome(string);
+    virtual string getNome();
+    virtual void diminuirHp() = 0;
+    virtual void diminuirSp() = 0;
+    virtual void furtividade() = 0;
+    virtual bool defesa(bool) = 0;
 protected:
     string nome;
     int hp;

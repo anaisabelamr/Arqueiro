@@ -7,8 +7,6 @@
 using std::cout;
 using std::cin;
 
-
-
 Personagem::Personagem()
 {
 }
@@ -51,38 +49,3 @@ int Personagem::getHp()
     return hp;
 }
 
-void Personagem::diminuirHp()
-{
-    hp = 0.2 * hp;
-}
-bool Personagem::defesa(bool bemSucedida)
-{
-	if (bemSucedida == false)
-	{
-		hp -= 0.2*hp;
-		cout << "\n\nDefesa mal sucedida\nHP: " << hp;
-		return false;
-	}
-	else
-	{
-		cout << "\n\nDefesa bem sucedida.\n\n";
-		return true;
-	}
-}
-void Personagem::diminuirSp()
-{
-	sp -= 2;
-}
-void Personagem::furtividade()
-{
-    do
-	{
-	cout <<"\n\nMODO FURTIVO\nDados do personagem";
-    cout << "\nHP: " << hp;
-    cout << "\nSP " << sp;
-    hp+=10;
-    sp+=4;
-    Sleep(3000);
-    }
-	while ((sp <= spMax) && (hp <= hpMax));
-}
