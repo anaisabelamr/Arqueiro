@@ -3,6 +3,9 @@
 
 #include "Personagem.h"
 
+using std::ostream;
+using std::string;
+
 class Espadachim : public Personagem {
     
     friend ostream &operator<<(ostream &, const Espadachim &);
@@ -10,9 +13,13 @@ class Espadachim : public Personagem {
 public:
     Espadachim();
     ~Espadachim();
-    
-public:
-    void atacar();
+	Espadachim(Espadachim & const)
+    const Espadachim &operator=(const Espadachim &);
+    bool operator==(const Espadachim &) const;    
+    virtual void diminuirHp();
+    virtual void diminuirSp();
+    virtual void furtividade();
+    virtual bool defesa(bool);
 protected:
     int espada;
     

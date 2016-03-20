@@ -47,10 +47,12 @@ const Arqueiro & Arqueiro::operator =(const Arqueiro &atributo)
     hp = atributo.hp;
     sp = atributo.sp;
 }
-const void Arqueiro::dados()
+const void Arqueiro::dados(Arqueiro &arqueiro, Flechas &flechas)
 {
-	Arqueiro a;
-    
+	cout << "\n\nNome: " << arqueiro.nome << "Oliver Queen";
+	cout << "\nHP: " << arqueiro.hp;
+	cout << "\nSP: " << arqueiro.sp;
+	cout << "\nTotal de flechas:\nComum: " << flechas.flechaComum << "\nFogo: " << flechas.flechaFogo "\nExplosiva: " << flechas.flechaExplosiva << "\nEnvenenada: " << flechas.flechaEnvenenada;
 
 }
 
@@ -64,20 +66,11 @@ void Arqueiro::atirar(Inimigo &inimigo)
 		case 1:
 			flechas.escolherFlecha();
 		default:
-			cout << "Tente novamente.";
+			cout << "\n\nTente novamente.";
 	}
-	
-
 	cout << "\nSP: " << sp;
 	
-	//cout << "\n\nHP do inimigo: " << inimigo.getHp();
-	
-	cout << "\n\nAtirar novamente? [1-Sim]  ";
-	cin >> opcao;
-	if (opcao == 1)
-	{
-		flechas.escolherFlecha();
-	}
+	atirar(inimigo);
 
 	if ((sp == 0) || (hp == 0))
 	{
@@ -113,11 +106,11 @@ void adicionarFlechas(Flechas flechas, const int &novasFlechas)
 	
 	flechas.addNumFlechas(novasFlechas);
 }
-void Arqueiro::diminuirHp()
+virtual void Arqueiro::diminuirHp()
 {
-    hp = 0.2 * hp;
+    hp -= 0.2 * hp;
 }
-bool Arqueiro::defesa(bool bemSucedida)
+virtual bool Arqueiro::defesa(bool bemSucedida)
 {
 	if (bemSucedida == false)
 	{
@@ -131,11 +124,11 @@ bool Arqueiro::defesa(bool bemSucedida)
 		return true;
 	}
 }
-void Arqueiro::diminuirSp()
+virtual void Arqueiro::diminuirSp()
 {
 	sp -= 2;
 }
-void Arqueiro::furtividade()
+virtual void Arqueiro::furtividade()
 {
     do
 	{
@@ -148,6 +141,7 @@ void Arqueiro::furtividade()
     }
 	while ((sp <= spMax) && (hp <= hpMax));
 }
+
 
 
 

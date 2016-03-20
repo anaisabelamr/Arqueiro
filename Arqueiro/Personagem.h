@@ -17,11 +17,11 @@ public:
 	Personagem(string, int, int, bool);
 	Personagem(const Personagem &);
     ~Personagem();
-    virtual int getSp();
-    virtual int getHp();
-    virtual int setSp(int);
-    virtual void setHp(int);
-    virtual void setNome(string);
+    int getSp();
+    int getHp();
+    int setSp(int);
+    void setHp(int);
+    void setNome(string);
     virtual string getNome();
     virtual void diminuirHp() = 0;
     virtual void diminuirSp() = 0;
