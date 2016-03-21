@@ -22,6 +22,7 @@ public:
     int setSp(int);
     void setHp(int);
     void setNome(string);
+    void Personagem::dados(Personagem &)
     virtual string getNome();
     virtual void diminuirHp() = 0;
     virtual void diminuirSp() = 0;
