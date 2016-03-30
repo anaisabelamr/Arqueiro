@@ -106,6 +106,8 @@
     <File Name="../Personagem.cpp"/>
     <File Name="../Hunter.h"/>
     <File Name="../Hunter.cpp"/>
+    <File Name="../AtiradorDeElite.h"/>
+    <File Name="../AtiradorDeElite.cpp"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
