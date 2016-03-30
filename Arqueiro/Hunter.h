@@ -16,7 +16,6 @@ public:
 	Hunter();
 	Hunter(const Hunter &);
 	~Hunter();
-	void atacarArmadilha();
 	void decArmadilha();
     int getArmadilha();
 	virtual void atirar(Inimigo *);
