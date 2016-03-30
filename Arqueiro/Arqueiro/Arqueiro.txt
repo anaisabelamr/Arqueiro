@@ -1,1 +1,1 @@
-./Debug/Arqueiro_arqueiro.cpp.o ./Debug/Arqueiro_main.cpp.o ./Debug/Arqueiro_Data.cpp.o ./Debug/Arqueiro_Inimigo.cpp.o ./Debug/Arqueiro_Flechas.cpp.o ./Debug/Arqueiro_Espadachim.cpp.o ./Debug/Arqueiro_Personagem.cpp.o ./Debug/Arqueiro_Hunter.cpp.o   
+./Debug/Arqueiro_arqueiro.cpp.o ./Debug/Arqueiro_main.cpp.o ./Debug/Arqueiro_Data.cpp.o ./Debug/Arqueiro_Inimigo.cpp.o ./Debug/Arqueiro_Flechas.cpp.o ./Debug/Arqueiro_Espadachim.cpp.o ./Debug/Arqueiro_Personagem.cpp.o ./Debug/Arqueiro_Hunter.cpp.o ./Debug/Arqueiro_AtiradorDeElite.cpp.o

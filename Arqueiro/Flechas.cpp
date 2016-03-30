@@ -11,10 +11,6 @@ using namespace std;
 using std::cout;
 using std::cin;
 
-Inimigo inimigo;
-Arqueiro arqueiro;
-
-
 Flechas::Flechas()
 {
     flechaComum = 0;
@@ -36,11 +32,29 @@ Flechas::Flechas(const Flechas &flechas)
     this->flechaEnvenenada = flechas.flechaEnvenenada;
     this->flechaComum = flechas.flechaComum;
 }
+
 Flechas::~Flechas()
 {
 
 }
-void Flechas::escolherFlecha()
+
+int Flechas::getNumeroFlechasComum(){
+    return this->flechaComum;
+}
+
+int Flechas::getNumeroFlechasEnvenenada(){
+    return this->flechaEnvenenada;
+}
+
+int Flechas::getNumeroFlechasExplosiva(){
+    return this->flechaExplosiva;
+}
+
+int Flechas::getNumeroFlechasFogo(){
+    return this->flechaFogo;
+}
+
+void Flechas::escolherFlecha(Inimigo &inimigo)
 {
     int opcao;
     cout << " Qual flecha o Arqueiro deve usar?\n1-Flecha Comum\n2-Flecha de Fogo\n3-Flecha Envenenada\n4-FlechaExplosiva\nOpcao: ";
@@ -66,7 +80,6 @@ void Flechas::escolherFlecha()
 void Flechas::atirarFlechaFogo(Inimigo &inimigo)
 {
     flechaFogo -= 1;
-	arqueiro.diminuirSp();
 	cout << "\n\nO inimigo esta queimando.";
 	Sleep(3000);
 	inimigo.inimigoMorto();
@@ -75,7 +88,6 @@ void Flechas::atirarFlechaFogo(Inimigo &inimigo)
 void Flechas::atirarFlechaExplosiva(Inimigo &inimigo)
 {
     flechaExplosiva -= 1;
-	arqueiro.diminuirSp();
 	cout << "\n\nExplosao em 3...";
 	Sleep(2000);
 	cout << "2...";
@@ -86,7 +98,6 @@ void Flechas::atirarFlechaExplosiva(Inimigo &inimigo)
 void Flechas::atirarFlechaEnvenenada(Inimigo &inimigo)
 {
     flechaEnvenenada -= 1;
-	arqueiro.diminuirSp();
 	cout << "\n\nInimigo envenenado.";
 	Sleep(3000);
 //	inimigo.inimigoMorto();
@@ -94,7 +105,6 @@ void Flechas::atirarFlechaEnvenenada(Inimigo &inimigo)
 void Flechas::atirarFlechaComum(Inimigo &inimigo)
 {
     flechaComum -= 1;
-	arqueiro.diminuirSp();
 //	inimigo.diminuirHp();
 }
 

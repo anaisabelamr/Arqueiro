@@ -9,7 +9,7 @@ using std::ostream;
 
 AtiradorDeElite::AtiradorDeElite()
 {
-	this->bala = bala;
+	this->bala = 5;
 }
 
 AtiradorDeElite::~AtiradorDeElite()
@@ -17,41 +17,41 @@ AtiradorDeElite::~AtiradorDeElite()
 }
 
 AtiradorDeElite::AtiradorDeElite(const AtiradorDeElite &atirador)
-:Arqueiro(static_cast <Arqueiro> (atirador))
+:Arqueiro()
 {
 this -> bala = atirador.bala;
 }
 
-ostream &operator<<(ostream &output, const AtiradorDeElite &atirador)
+ostream &operator<<(ostream &output, AtiradorDeElite &atirador)
 {
-	output << static_cast <Arqueiro> (atirador);
-    output << "BALAS DISPONIVEIS: " << atirador.bala;
+	output  << "NOME DO PERSONAGEM: " << atirador.getNome( ) << "\nHP: " << atirador.getHp() << "\nSP: " << atirador.getSp();
+    output << "BALAS DISPONIVEIS: " << atirador.getBala();
     return output;
 }
-bool Hunter::operator ==(const AtiradorDeElite &atirador) const
-{
-    if(atirador.bala != bala) return false;
-    return true;
+
+int AtiradorDeElite::getBala(){
+    return this->bala;
 }
-virtual void AtiradorDeElite::dados(AtiradorDeElite &atirador)
+
+bool AtiradorDeElite::operator ==(const AtiradorDeElite &atirador) const
 {
-	cout << "\n\nNome: " << atirador.nome << "Deadshot";
-	cout << "\nHP: " << atirador.hp;
-	cout << "\nSP: " << atirador.sp;
-	cout << "Total de balas: " << atirador.bala;
+    if(atirador.bala != this->bala) return false;
+    return true;
 }
 
 void AtiradorDeElite::decBala()
 {
 	bala--;
 }
-virtual void Hunter::atirar()
+
+void AtiradorDeElite::atirar(Inimigo *inimigo)
 {
 	while (bala != 0)
 	{
 	cout << " ATIRANDO.\n ";
 	decBala();
 	diminuirSp();
-	Sleep(2000);
+    Sleep(2000);
 	}
+    inimigo->inimigoMorto();
 }

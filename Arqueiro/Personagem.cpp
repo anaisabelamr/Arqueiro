@@ -10,6 +10,7 @@ using std::cin;
 Personagem::Personagem()
 {
 }
+
 Personagem::Personagem(string nome, int hp, int sp, bool bemSucedida)
 {
 	this->nome = nome;
@@ -17,6 +18,7 @@ Personagem::Personagem(string nome, int hp, int sp, bool bemSucedida)
     this->sp = sp;
 	this->bemSucedida = bemSucedida;
 }
+
 Personagem::Personagem(const Personagem &personagem)
 {
 	this->nome = personagem.nome;
@@ -24,20 +26,24 @@ Personagem::Personagem(const Personagem &personagem)
     this->sp = personagem.sp;
 	this->bemSucedida = personagem.bemSucedida;
 }
+
 Personagem::~Personagem()
 {
 }
+
 ostream &operator<<(ostream &output, const Personagem &imprime)
 {
     output << "NOME DO PERSONAGEM: " << imprime.nome << "\nHP: " << imprime.hp << "\nSP: " << imprime.sp;
     return output;
 }
+
 void Personagem::dados(Personagem &p)
 {
     cout << "Nome do personagem: " << p.nome;
     cout << "HP: " << p.hp;
     cout << "SP: " << p.sp;
 }
+
 void Personagem::setNome(string nome)
 {
     this->nome = nome;
@@ -54,11 +60,15 @@ int Personagem::getHp()
 {
     return hp;
 }
-virtual void Personagem::diminuirHp()
+
+int Personagem::getSp(){
+    return this->sp;
+}
+void Personagem::diminuirHp()
 {
     hp -= 0.2 * hp;
 }
-virtual bool Personagem::defesa(bool bemSucedida)
+bool Personagem::defesa(bool bemSucedida)
 {
 	if (bemSucedida == false)
 	{
@@ -72,11 +82,11 @@ virtual bool Personagem::defesa(bool bemSucedida)
 		return true;
 	}
 }
-virtual void Personagem::diminuirSp()
+void Personagem::diminuirSp()
 {
 	sp -= 2;
 }
-virtual void Personagem::furtividade()
+void Personagem::furtividade()
 {
     do
 	{

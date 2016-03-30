@@ -9,6 +9,9 @@
 #include <stdio.h>
 #include <windows.h>
 #include <vector>
+#include "Hunter.h"
+#include "AtiradorDeElite.h"
+
 
 const static double hpMax = 50.0;
 const static int spMax = 20;
@@ -17,56 +20,40 @@ using namespace std;
 
 int main()
 {
-    Arqueiro arq;
-	Inimigo i;
-	Data d(15,6,2015);
-	Flechas f;
 
-vector<Personagem *> personagem;
+    vector< Arqueiro *> arqueiro;
 
-cout << "Simulando personagens\n\n";
+    cout << "\nSimulando personagens\n\n";
 
-while(true)
-{
     int i=0;
-    string p1,p2;
-	Classe: [1-Arqueiro]  [2- Espadachim]";
-    cin >> p1;
-switch(p1)
-{
-	case 1:
-	{
-		personagem.push_back(new Arqueiro(20,10,Oliver,Data,Flecha));
-		personagem ++;
-	}
-	case 2:
-	{
-		personagem.push_back(new Espadachim(espadachim));
-		personagem ++;
-	}
-}
+    while(i<4)
+    {
+        string classe;
+        cout << "Classe: [1-Hunter] | [2- Atirador de Elite]: ";
+        cin >> classe;
+        
+        if(classe=="1"){
+            arqueiro.push_back(new Hunter());
+            i++;
+        }else if(classe=="2"){
+            arqueiro.push_back(new AtiradorDeElite());
+            i++;
+        }
+    }
 
-Personagem *personagemPtr = dynamic_cast < Personagem *> (personagem[i]);
-
-    Personagem personagem2(p1,p2);
-    personagem.push_back(personagem2);
-    cout << "\n\n\ncContinuar? [1-Sim] ";
-    cin >> i;
+    for(int j=0;j<arqueiro.size();j++){
     
-    if (i != 1) break;
+        Inimigo inimigo = Inimigo();
+        Hunter *hunterPtr = dynamic_cast < Hunter *> (arqueiro[j]);
+        if(hunterPtr!=0){
+            hunterPtr->atirar(&inimigo);
+        }else{
+            AtiradorDeElite *atiradorPtr = dynamic_cast <AtiradorDeElite*> (arqueiro[j]);
+            atiradorPtr->atirar(&inimigo);
+        }
+            
+    
+    }
+    return 0;
 }
 
-for(int j=0;j<personagem.size();j++)
-{
-    cout << "Personagem " << j << "\n\n";
-    personagem[i].dados();
-    cout << "\n\n";
-}
-
-                         
-        EmpregadodeComissaoMaisBase *derivedPtr =        
-           dynamic_cast < EmpregadoDeComissaoMaisBase * >
-              ( empregados[ i ] );  
-
-	return 0;
-}

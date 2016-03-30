@@ -13,7 +13,7 @@ class Espadachim : public Personagem {
 public:
     Espadachim();
     ~Espadachim();
-	Espadachim(Espadachim & const)
+	Espadachim(const Espadachim &);
     const Espadachim &operator=(const Espadachim &);
     bool operator==(const Espadachim &) const;    
     virtual void diminuirHp();
@@ -22,9 +22,6 @@ public:
     virtual bool defesa(bool);
 protected:
     int espada;
-    
-
-
 };
 
 #endif // ESPADACHIM_H

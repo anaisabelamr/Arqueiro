@@ -9,45 +9,45 @@ using std::ostream;
 
 Hunter::Hunter()
 {
-	this->armadilha = armadilha;
-
+	this->armadilha = 10;
 }
+
 Hunter::Hunter(const Hunter &hunter)
-:Arqueiro(static_cast <Arqueiro> (hunter))
+:Arqueiro()
 {
 this -> armadilha = hunter.armadilha;
 }
+
 Hunter::~Hunter()
 {
 }
-ostream &operator<<(ostream &output, const Hunter &hunter)
+
+ostream &operator<<(ostream &output, Hunter &hunter)
 {
-	output << static_cast <Arqueiro> (hunter);
-    output << "ARMADILHAS DISPONIVEIS: " << hunter.armadilha;
+	output  << "NOME DO PERSONAGEM: " << hunter.getNome() << "\nHP: " << hunter.getHp() << "\nSP: " << hunter.getSp();
+    output << "ARMADILHAS DISPONIVEIS: " << hunter.getArmadilha();
     return output;
 }
+
+int Hunter::getArmadilha(){
+    return this->armadilha;
+}
+
 bool Hunter::operator ==(const Hunter &hunter) const
 {
     if(hunter.armadilha != armadilha) return false;
     return true;
-}
-virtual void Hunter::dados(Hunter &hunter)
-{
-	cout << "\n\nNome: " << hunter.nome << "Helena Wayne";
-	cout << "\nHP: " << hunter.hp;
-	cout << "\nSP: " << hunter.sp;
-	cout << "Total de armadilhas: " << hunter.armadilha;
 }
 
 void Hunter::decArmadilha()
 {
 	armadilha--;
 }
-virtual void Hunter::atirar()
+void Hunter::atirar(Inimigo *inimigo)
 {
 	cout << " ARMADILHA DEPOSITADA.\n ";
 	decArmadilha();
 	diminuirSp();
 	Sleep(2000);
-	cout << "BUM!! \n\nO INIMIGO ESTA DERROTADO";
+    inimigo->inimigoMorto();
 }

@@ -29,6 +29,6 @@ Inimigo::~Inimigo()
 void Inimigo::inimigoMorto()
 {
 	hp = 0;
-	cout << "\n\nInimigo esta derrotado. Parabens, arqueiro!";
+	cout << "\n\nInimigo esta derrotado. Parabens!";
 }
 

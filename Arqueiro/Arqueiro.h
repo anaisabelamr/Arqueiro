@@ -22,11 +22,9 @@ public:
 	Arqueiro();
 	Arqueiro(const Arqueiro &);
     ~Arqueiro();
-	virtual static const void dados(Arqueiro &, Flechas &) = 0;
-    virtual void atirar(Inimigo &) = 0;
-    virtual void adicionarFlechas(const int &);
-	virtual void setDataBatalha(Data dataBatalha);
-	virtual int getDataBatalha();
+	const void dados(Arqueiro &, Flechas &);
+    virtual void atirar(Inimigo *) = 0;
+    void adicionarFlechas(const int &);
     virtual void diminuirHp();
     virtual void diminuirSp();
     virtual void furtividade();

@@ -8,7 +8,7 @@
 using namespace std;
 using std::string;
 
-class Inimigo : public Personagem
+class Inimigo
 {
 public:
 	Inimigo();
@@ -17,7 +17,8 @@ public:
 	~Inimigo();
 	void inimigoMorto();
 private:
-
+    int hp;
+    string nome;
 };
 
 #endif // INIMIGO_H

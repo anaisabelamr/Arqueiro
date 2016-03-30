@@ -17,11 +17,11 @@ const double hpMax = 50;
 
 Arqueiro::Arqueiro()
 {
-    dataBatalha = 0;
+    dataBatalha = Data(13,11,1995);
 }
 
 Arqueiro::Arqueiro(const Arqueiro &arqueiro)
-:Personagem(static_cast <Personagem> (arqueiro))
+:Personagem(arqueiro.nome,arqueiro.hp,arqueiro.sp,arqueiro.bemSucedida)
 {
 	this -> dataBatalha = arqueiro.dataBatalha;
 	this -> flechas = arqueiro.flechas;
@@ -32,7 +32,7 @@ Arqueiro::~Arqueiro()
 }
 ostream &operator<<(ostream &output, Arqueiro &arqueiro)
 {
-	output << static_cast <Personagem> (arqueiro);
+	output  << "NOME DO PERSONAGEM: " << arqueiro.getNome() << "\nHP: " << arqueiro.getHp() << "\nSP: " << arqueiro.getSp();
 }
 bool Arqueiro::operator ==(const Arqueiro &comparaArqueiro) const
 {
@@ -52,31 +52,10 @@ const void Arqueiro::dados(Arqueiro &arqueiro, Flechas &flechas)
 	cout << "\n\nNome: " << arqueiro.nome << "Oliver Queen";
 	cout << "\nHP: " << arqueiro.hp;
 	cout << "\nSP: " << arqueiro.sp;
-	cout << "\nTotal de flechas:\nComum: " << flechas.flechaComum << "\nFogo: " << flechas.flechaFogo "\nExplosiva: " << flechas.flechaExplosiva << "\nEnvenenada: " << flechas.flechaEnvenenada;
+	cout << "\nTotal de flechas:\nComum: " << flechas.getNumeroFlechasComum() << "\nFogo: " << flechas.getNumeroFlechasFogo() << "\nExplosiva: " << flechas.getNumeroFlechasExplosiva() << "\nEnvenenada: " << flechas.getNumeroFlechasEnvenenada();
 
 }
 
-void Arqueiro::atirar(Inimigo &inimigo)
-{
-	int opcao;
-	cout << "ARQUEIRO, DESEJA ATIRAR? [1-Sim] ";
-	cin >> opcao;
-	switch(opcao)
-	{
-		case 1:
-			flechas.escolherFlecha();
-		default:
-			cout << "\n\nTente novamente.";
-	}
-	cout << "\nSP: " << sp;
-	
-	atirar(inimigo);
-
-	if ((sp == 0) || (hp == 0))
-	{
-//		furtividade();
-	}
-}
 void adicionarFlechas(Flechas flechas, const int &novasFlechas)
 {
     /*if (flechas.getNumeroFlechas() != 0)
@@ -106,11 +85,13 @@ void adicionarFlechas(Flechas flechas, const int &novasFlechas)
 	
 	flechas.addNumFlechas(novasFlechas);
 }
-virtual void Arqueiro::diminuirHp()
+
+void Arqueiro::diminuirHp()
 {
     hp -= 0.2 * hp;
 }
-virtual bool Arqueiro::defesa(bool bemSucedida)
+
+bool Arqueiro::defesa(bool bemSucedida)
 {
 	if (bemSucedida == false)
 	{
@@ -124,11 +105,13 @@ virtual bool Arqueiro::defesa(bool bemSucedida)
 		return true;
 	}
 }
-virtual void Arqueiro::diminuirSp()
+
+void Arqueiro::diminuirSp()
 {
 	sp -= 2;
 }
-virtual void Arqueiro::furtividade()
+
+void Arqueiro::furtividade()
 {
     do
 	{

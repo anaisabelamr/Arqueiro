@@ -1,43 +1,50 @@
 #include "Espadachim.h"
-#inclide "Personagem.h"
+#include "Personagem.h"
+#include <iostream>
+#include <windows.h>
 
-using std::ostream;
-using std::string;
+using namespace std;
 
-Espadachim::Espadachim()
+Espadachim::Espadachim():
+Personagem("titi",5000000000,20000000,false)
 {
-	this -> espada = espadachim.espada;
+	this -> espada = 1;
 }
 Espadachim::~Espadachim()
 {
 }
 Espadachim::Espadachim(const Espadachim &espadachim)
-:Personagem(static_cast <Personagem> (espadachim))
+:Personagem(espadachim.nome,espadachim.hp,espadachim.sp,espadachim.bemSucedida)
 {
 	this -> espada = espadachim.espada;
 }
 ostream &operator<<(ostream &output, Espadachim &espadachim)
 {
-	output << static_cast <Personagem> (espadachim);
+	output << "NOME DO PERSONAGEM: " << espadachim.getNome() << "\nHP: " << espadachim.getHp() << "\nSP: " << espadachim.getSp();
+    return output;
 }
+
 bool Espadachim::operator ==(const Espadachim &espadachim) const
 {
     if(espadachim.espada != espada) return false;
     return true;
 }
-virtual void diminuirHp()
+
+void Espadachim::diminuirHp()
 {
-	hp -= 0.5*hp;
+	this->hp-= 0.5*this->hp;
 }
-virtual void diminuirSp()
+
+void Espadachim::diminuirSp()
 {
-	sp -= 3;
+	this->sp -= 3;
 }
-virtual void furtividade()
+
+void Espadachim::furtividade()
 {
     do
 	{
-	cout <<"\n\nMODO FURTIVO\nDados do personagem";
+	cout << "\n\nMODO FURTIVO\nDados do personagem";
     cout << "\nHP: " << hp;
     cout << "\nSP " << sp;
     hp+=5;
@@ -46,7 +53,8 @@ virtual void furtividade()
     }
 	while ((sp <= spMax) && (hp <= hpMax));
 }
-virtual bool defesa(bool)
+
+bool Espadachim::defesa(bool)
 {
 	if (bemSucedida == false)
 	{

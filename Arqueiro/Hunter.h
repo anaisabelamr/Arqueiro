@@ -18,9 +18,9 @@ public:
 	~Hunter();
 	void atacarArmadilha();
 	void decArmadilha();
-	virtual void atirar();
-	virtual void dados(Hunter &);
-private:
+    int getArmadilha();
+	virtual void atirar(Inimigo *);
+protected:
 	int armadilha = 5;
 };
 

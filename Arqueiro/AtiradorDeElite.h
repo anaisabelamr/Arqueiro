@@ -12,11 +12,12 @@ public:
     const AtiradorDeElite &operator=(const AtiradorDeElite &);
     bool operator==(const AtiradorDeElite &) const;
 	AtiradorDeElite();
+    AtiradorDeElite(const AtiradorDeElite &);
 	~AtiradorDeElite();
 	void decBala();
-	virtual void atirar();
-	virtual void dados(AtiradorDeElite &);
-private:
+    int getBala();
+	virtual void atirar(Inimigo *);
+protected:
 	int bala = 5;
 
 };

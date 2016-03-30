@@ -12,12 +12,16 @@ public:
     Flechas(int, int, int, int);
 	Flechas(const Flechas &);
     ~Flechas();
-    void escolherFlecha();
+    void escolherFlecha(Inimigo &);
     void atirarFlechaFogo(Inimigo &);
     void atirarFlechaExplosiva(Inimigo &);
     void atirarFlechaEnvenenada(Inimigo &);
     void atirarFlechaComum(Inimigo &);
 	int getNumeroFlechas();
+    int getNumeroFlechasComum();
+    int getNumeroFlechasExplosiva();
+    int getNumeroFlechasEnvenenada();
+    int getNumeroFlechasFogo();
 	void addNumFlechas(int);
 private:
     int flechaFogo = 10;
