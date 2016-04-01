@@ -41,11 +41,11 @@ bool Hunter::operator ==(const Hunter &hunter) const
 
 void Hunter::decArmadilha()
 {
+	cout << " \nARMADILHA DEPOSITADA.\n ";
 	armadilha--;
 }
 void Hunter::atirar(Inimigo *inimigo)
 {
-	cout << " ARMADILHA DEPOSITADA.\n ";
 	decArmadilha();
 	diminuirSp();
 	Sleep(2000);

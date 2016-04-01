@@ -29,7 +29,7 @@ int main()
     while(i<4)
     {
         string classe;
-        cout << "Classe: [1-Hunter] | [2- Atirador de Elite]: ";
+        cout << "\n\nClasse: [1-Hunter] | [2- Atirador de Elite]: ";
         cin >> classe;
         
         if(classe=="1"){
@@ -43,13 +43,13 @@ int main()
 
     for(int j=0;j<arqueiro.size();j++){
     
-        Inimigo inimigo = Inimigo();
+        
         Hunter *hunterPtr = dynamic_cast < Hunter *> (arqueiro[j]);
         if(hunterPtr!=0){
-            hunterPtr->atirar(&inimigo);
+            hunterPtr->decArmadilha();
         }else{
             AtiradorDeElite *atiradorPtr = dynamic_cast <AtiradorDeElite*> (arqueiro[j]);
-            atiradorPtr->atirar(&inimigo);
+            atiradorPtr->decFlechas();
         }
             
     
