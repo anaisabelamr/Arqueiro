@@ -14,11 +14,11 @@ public:
 	AtiradorDeElite();
     AtiradorDeElite(const AtiradorDeElite &);
 	~AtiradorDeElite();
-	void decBala();
-    int getBala();
+	void decFlechas();
+    int getFlechas();
 	virtual void atirar(Inimigo *);
 protected:
-	int bala = 5;
+	int flechas = 20;
 
 };
 

@@ -9,7 +9,7 @@ using std::ostream;
 
 AtiradorDeElite::AtiradorDeElite()
 {
-	this->bala = 5;
+	this->flechas = 20;
 }
 
 AtiradorDeElite::~AtiradorDeElite()
@@ -19,37 +19,38 @@ AtiradorDeElite::~AtiradorDeElite()
 AtiradorDeElite::AtiradorDeElite(const AtiradorDeElite &atirador)
 :Arqueiro()
 {
-this -> bala = atirador.bala;
+this -> flechas = atirador.flechas;
 }
 
 ostream &operator<<(ostream &output, AtiradorDeElite &atirador)
 {
 	output  << "NOME DO PERSONAGEM: " << atirador.getNome( ) << "\nHP: " << atirador.getHp() << "\nSP: " << atirador.getSp();
-    output << "BALAS DISPONIVEIS: " << atirador.getBala();
+    output << "FLECHAS DISPONIVEIS: " << atirador.getFlechas();
     return output;
 }
 
-int AtiradorDeElite::getBala(){
-    return this->bala;
+int AtiradorDeElite::getFlechas(){
+    return this->flechas;
 }
 
 bool AtiradorDeElite::operator ==(const AtiradorDeElite &atirador) const
 {
-    if(atirador.bala != this->bala) return false;
+    if(atirador.flechas != this->flechas) return false;
     return true;
 }
 
-void AtiradorDeElite::decBala()
+void AtiradorDeElite::decFlechas()
 {
-	bala--;
+	cout << " \nATIRANDO EM 3...2...1\n ";
+	flechas-=5;
 }
 
 void AtiradorDeElite::atirar(Inimigo *inimigo)
 {
-	while (bala != 0)
+	while (flechas != 0)
 	{
-	cout << " ATIRANDO.\n ";
-	decBala();
+	cout << " TEMPESTADE DE FLECHAS.\n ";
+	decFlechas();
 	diminuirSp();
     Sleep(2000);
 	}
